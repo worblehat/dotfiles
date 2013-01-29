@@ -1,0 +1,7 @@
+[user]
+	name = Tobias Marquardt
+	email = tm@tobix.eu
+[core]
+	editor = vim
+[merge]
+	tool = vimdiff
