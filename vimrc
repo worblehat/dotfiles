@@ -4,6 +4,20 @@ noremap l k
 noremap k j
 noremap j h
 
+" Disable arrow keys in normal and insert mode (to avoid temptation to use them)
+inoremap  <Up>     <NOP>
+inoremap  <Down>   <NOP>
+inoremap  <Left>   <NOP>
+inoremap  <Right>  <NOP>
+noremap   <Up>     <NOP>
+noremap   <Down>   <NOP>
+noremap   <Left>   <NOP>
+noremap   <Right>  <NOP>
+
+" Save with ctrl+s in normal and insert mode
+nmap <c-s>	:w<CR>
+imap <c-s>  <ESC>:w<CR>a
+
 " Use UTF-8
 set encoding=utf-8
 
