@@ -17,10 +17,10 @@ do
         # If there already is something move it to the backup dir
         if [ -f $link ] || [ -d $link ] || [ -L $link ]
         then
-			mkdir -p $backup_dir
-			cp -R --no-dereference --preserve $link "${backup_dir}/${link##*/}.${date}"
-			rm $link
-			echo "Moved ${link} to ${backup_dir}/${link##*/}.${date}"
+            mkdir -p $backup_dir
+            cp -R --no-dereference --preserve $link "${backup_dir}/${link##*/}.${date}"
+            rm -r $link
+            echo "Moved ${link} to ${backup_dir}/${link##*/}.${date}"
 		fi
         # Create the symlink
         ln -s "${current_dir}/${file##*/}" $link 
