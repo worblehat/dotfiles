@@ -10,11 +10,11 @@ date=$(/bin/date +%Y-%m-%d_%H-%M-%S)
 # Iterate over all non-dot-files 
 for file in ./* 
 do
-	# Ommit this script and the README
+    # Ommit this script and the README
     if [ "$file" != "./dotlink.sh" ]  && [ "$file" != "./README.md" ]
     then
         link="${HOME}/.${file##*/}"
-		# If there already is something move it to the backup dir
+        # If there already is something move it to the backup dir
         if [ -f $link ] || [ -d $link ] || [ -L $link ]
         then
 			mkdir -p $backup_dir
@@ -22,7 +22,7 @@ do
 			rm $link
 			echo "Moved ${link} to ${backup_dir}/${link##*/}.${date}"
 		fi
-		# Create the symlink
+        # Create the symlink
         ln -s "${current_dir}/${file##*/}" $link 
         echo "Linked ${link} to ${current_dir}/${file##*/}"
     fi
