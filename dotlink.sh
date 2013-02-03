@@ -21,7 +21,7 @@ do
             cp -R --no-dereference --preserve $link "${backup_dir}/${link##*/}.${date}"
             rm -r $link
             echo "Moved ${link} to ${backup_dir}/${link##*/}.${date}"
-		fi
+        fi
         # Create the symlink
         ln -s "${current_dir}/${file##*/}" $link 
         echo "Linked ${link} to ${current_dir}/${file##*/}"

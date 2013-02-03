@@ -48,6 +48,8 @@ channels = (
   { name = "#python"; chatnet = "freenode"; autojoin = "no"; },
   { name = "#pyqt"; chatnet = "freenode"; autojoin = "no"; },
   { name = "##c++"; chatnet = "freenode"; autojoin = "no"; },
+  { name = "#vim"; chatnet = "freenode"; autojoin = "no"; },
+  { name = "#Ogre3D"; chatnet = "freenode"; autojoin = "no"; },
   {
     name = "#GeflickteTrommel";
     chatnet = "scheibenwelt";

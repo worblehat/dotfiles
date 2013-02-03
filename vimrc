@@ -24,6 +24,9 @@ set encoding=utf-8
 " Syntax highlighting
 syntax on
 
+" Don't make any noise
+set noerrorbells
+
 " Show line numbers
 set number
 
