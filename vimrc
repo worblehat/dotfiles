@@ -18,6 +18,13 @@ noremap   <Right>  <NOP>
 nmap <c-s>	:w<CR>
 imap <c-s>  <ESC>:w<CR>a
 
+" Easier buffer switching
+nnoremap <c-b>  :buffers<CR>:buffer<Space>
+
+" Fast scrolling with navigation ctrl and navifation keys
+nnoremap <c-k>  <c-f>
+nnoremap <c-l>  <c-b>
+ 
 " Use UTF-8
 set encoding=utf-8
 
