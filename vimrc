@@ -21,9 +21,15 @@ imap <c-s>  <ESC>:w<CR>a
 " Easier buffer switching
 nnoremap <c-b>  :buffers<CR>:buffer<Space>
 
-" Fast scrolling with navigation ctrl and navifation keys
+" Fast scrolling with ctrl and navigation keys
 nnoremap <c-k>  <c-f>
 nnoremap <c-l>  <c-b>
+
+" Enable use of 256 colors in terminal
+:set t_Co=256
+
+" Color scheme
+colorscheme molokai
  
 " Use UTF-8
 set encoding=utf-8
@@ -31,8 +37,15 @@ set encoding=utf-8
 " Syntax highlighting
 syntax on
 
+" Hide Buffers instead of closing them 
+" => when opening a new buffer the old one can have unsafed changes (has to be forced with ! otherwise)
+set hidden
+
 " Don't make any noise
 set noerrorbells
+
+" Alway show file/buffer name in status bar
+set laststatus=2
 
 " Show line numbers
 set number
@@ -52,3 +65,15 @@ set smarttab
 
 " Ignore case when searchings
 set ignorecase
+
+" Highlight occurences when searching 
+set hlsearch
+
+" Clear highlight with space
+" TODO moves the cursor down by one line (due to space default mapping), change this!
+:nnoremap <Space> :nohlsearch<CR><CR>
+
+" Already highlight occurences while typing the search term
+set incsearch 
+
+
