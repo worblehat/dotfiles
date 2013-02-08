@@ -12,7 +12,9 @@ TabBarMode=2
 TabBarPosition=1
 
 [Scrolling]
+HistorySize=10000
 ScrollBarPosition=2
 
 [Terminal Features]
+BlinkingCursorEnabled=false
 FlowControlEnabled=false

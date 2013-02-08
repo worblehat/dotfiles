@@ -1,4 +1,15 @@
-" Navigation on jklö (on german qwertz keyboard layout!)
+" Set up pathogen plugin
+filetype off
+execute pathogen#infect()
+execute pathogen#helptags()
+
+" Syntax highlighting
+syntax on
+
+" Use filetype specific plugins and  indentation rules if available
+filetype plugin indent on
+
+" Navigation on jklö (for german qwertz keyboard layout!)
 noremap ö l
 noremap l k
 noremap k j
@@ -34,9 +45,6 @@ colorscheme molokai
 " Use UTF-8
 set encoding=utf-8
 
-" Syntax highlighting
-syntax on
-
 " Hide Buffers instead of closing them 
 " => when opening a new buffer the old one can have unsafed changes (has to be forced with ! otherwise)
 set hidden
@@ -52,7 +60,7 @@ set number
 
 " Show wrap line
 set colorcolumn=110
-highlight ColorColumn ctermbg=DarkGreen
+highlight ColorColumn ctermbg=234
 
 " Automatic reload .vimrc when it's altered in vim
 autocmd! bufwritepost .vimrc source %
@@ -71,7 +79,7 @@ set hlsearch
 
 " Clear highlight with space
 " TODO moves the cursor down by one line (due to space default mapping), change this!
-:nnoremap <Space> :nohlsearch<CR><CR>
+nnoremap <Space> :nohlsearch<CR><CR>
 
 " Already highlight occurences while typing the search term
 set incsearch 
