@@ -84,4 +84,5 @@ nnoremap <Space> :nohlsearch<CR><CR>
 " Already highlight occurences while typing the search term
 set incsearch 
 
-
+" Command line completion (similar to the behaviour in bash)
+set wildmode=longest,list

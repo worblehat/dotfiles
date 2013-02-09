@@ -51,6 +51,7 @@ channels = (
   { name = "#vim"; chatnet = "freenode"; autojoin = "no"; },
   { name = "#Ogre3D"; chatnet = "freenode"; autojoin = "no"; },
   { name = "#git"; chatnet = "freenode"; autojoin = "no"; },
+  { name = "#latex-de"; chatnet = "freenode"; autojoin = "no"; },
   {
     name = "#GeflickteTrommel";
     chatnet = "scheibenwelt";
