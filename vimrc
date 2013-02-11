@@ -36,6 +36,9 @@ nnoremap <c-b>  :buffers<CR>:buffer<Space>
 nnoremap <c-k>  <c-f>
 nnoremap <c-l>  <c-b>
 
+" Toggle tagbar
+nmap <F8> :TagbarToggle<CR>
+
 " Enable use of 256 colors in terminal
 :set t_Co=256
 
@@ -65,6 +68,10 @@ highlight ColorColumn ctermbg=234
 " Automatic reload .vimrc when it's altered in vim
 autocmd! bufwritepost .vimrc source %
 
+" Time (ms) after an edit the swap file ist written. 
+" Used by Tagbar and showmarks to update highlights/marks
+set updatetime=500
+
 " Convert tabs to 4 spaces
 set shiftwidth=4
 set tabstop=4
@@ -86,3 +93,10 @@ set incsearch
 
 " Command line completion (similar to the behaviour in bash)
 set wildmode=longest,list
+
+" ======================
+" Plugins Configurations
+" ======================
+
+" Show marks in all buffers
+autocmd VimEnter * DoShowMarks!
