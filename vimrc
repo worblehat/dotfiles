@@ -116,5 +116,10 @@ inoremap <silent>l <C-R>=OmniPopup('l')<CR>
 " Plugins Configurations
 " ======================
 
+" === showmarks ===
 " Show marks in all buffers
 autocmd VimEnter * DoShowMarks!
+
+" === Syntastic ===
+" Chose syntax checker for python 
+let g:syntastic_python_checkers=['pyflakes']
