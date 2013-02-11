@@ -94,19 +94,14 @@ set incsearch
 " Command line completion (similar to the behaviour in bash)
 set wildmode=longest,list
 
-" Select entry in omnicompletion menu using the navigation keys
-function! OmniPopup(action)
-    if pumvisible()
-        if a:action == 'k'
-            return "\<C-N>"
-        elseif a:action == 'l'
-            return "\<C-P>"
-        endif
-    endif
-    return a:action
-endfunction
-inoremap <silent>k <C-R>=OmniPopup('k')<CR>
-inoremap <silent>l <C-R>=OmniPopup('l')<CR>
+" OmniCompletion menu behaviour (might already be the default)
+set completeopt=menuone,longest,preview
+
+" Make choosing an entry from the omnicompletion menu more pleasant 
+" (using navigation keys and enter)
+inoremap <expr> k       pumvisible() ? "\<C-n>" : "\k"
+inoremap <expr> l       pumvisible() ? "\<C-p>" : "\l" 
+inoremap <expr> <CR>    pumvisible() ? "\<C-y>" : "\<CR>" 
 
 " ======================
 " Plugins Configurations
