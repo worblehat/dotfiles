@@ -37,7 +37,10 @@ nnoremap <c-k>  <c-f>
 nnoremap <c-l>  <c-b>
 
 " Toggle tagbar
-nmap <F8> :TagbarToggle<CR>
+nmap <F2> :TagbarToggle<CR>
+
+" Toggle line numbers and fold column for easy copying:
+nnoremap <F3> :set nonumber!<CR>:set foldcolumn=0<CR>
 
 " Enable use of 256 colors in terminal
 :set t_Co=256
@@ -93,6 +96,21 @@ set incsearch
 
 " Command line completion (similar to the behaviour in bash)
 set wildmode=longest,list
+
+" Select entry in omnicompletion menu using the navifation keys
+function! OmniPopup(action)
+    if pumvisible()
+        if a:action == 'k'
+            return "\<C-N>"
+        elseif a:action == 'l'
+            "TODO doens not work, fix this!
+            return "\<C-P>"
+        endif
+    endif
+    return a:action
+endfunction
+inoremap <silent>k <C-R>=OmniPopup('k')<CR>
+inoremap <silent>l <C-R>=OmniPopup('l')<CR>
 
 " ======================
 " Plugins Configurations
