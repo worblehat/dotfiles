@@ -36,9 +36,6 @@ nnoremap <c-b>  :buffers<CR>:buffer<Space>
 nnoremap <c-k>  <c-f>
 nnoremap <c-l>  <c-b>
 
-" Toggle tagbar
-nmap <F2> :TagbarToggle<CR>
-
 " Toggle line numbers and fold column for easy copying:
 nnoremap <F3> :set nonumber!<CR>:set foldcolumn=0<CR>
 
@@ -97,13 +94,12 @@ set incsearch
 " Command line completion (similar to the behaviour in bash)
 set wildmode=longest,list
 
-" Select entry in omnicompletion menu using the navifation keys
+" Select entry in omnicompletion menu using the navigation keys
 function! OmniPopup(action)
     if pumvisible()
         if a:action == 'k'
             return "\<C-N>"
         elseif a:action == 'l'
-            "TODO doens not work, fix this!
             return "\<C-P>"
         endif
     endif
@@ -115,6 +111,10 @@ inoremap <silent>l <C-R>=OmniPopup('l')<CR>
 " ======================
 " Plugins Configurations
 " ======================
+
+" === TagBar ===
+" Toggle tagbar
+nmap <F2> :TagbarToggle<CR>
 
 " === showmarks ===
 " Show marks in all buffers
