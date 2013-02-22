@@ -1,3 +1,5 @@
+set nocompatible
+
 " Set up pathogen plugin
 filetype off
 execute pathogen#infect()
@@ -118,3 +120,10 @@ autocmd VimEnter * DoShowMarks!
 " === Syntastic ===
 " Chose syntax checker for python 
 let g:syntastic_python_checkers=['pyflakes']
+""let g:syntastic_python_checkers=['flake8']    TODO
+
+" === jedi-vim ===
+" don't automatically open completion menu
+let g:jedi#popup_on_dot = 0
+" don't open new tab, when jumping to definition
+let g:jedi#use_tabs_not_buffers = 0
