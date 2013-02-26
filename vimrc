@@ -113,6 +113,10 @@ inoremap <expr> <CR>    pumvisible() ? "\<C-y>" : "\<CR>"
 " Toggle tagbar
 nmap <F2> :TagbarToggle<CR>
 
+" === TaskList ===
+" Show Task list 
+nmap <F4> :TaskList<CR>
+
 " === showmarks ===
 " Show marks in all buffers
 autocmd VimEnter * DoShowMarks!
