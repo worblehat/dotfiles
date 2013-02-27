@@ -87,8 +87,7 @@ set ignorecase
 set hlsearch
 
 " Clear highlight with space
-" TODO moves the cursor down by one line (due to space default mapping), change this!
-nnoremap <Space> :nohlsearch<CR><CR>
+nnoremap <Space> :nohlsearch<CR>
 
 " Already highlight occurences while typing the search term
 set incsearch 
@@ -99,11 +98,16 @@ set wildmode=longest,list
 " OmniCompletion menu behaviour (might already be the default)
 set completeopt=menuone,longest,preview
 
-" Make choosing an entry from the omnicompletion menu more pleasant 
+" Make choosing an entry from completion menus more pleasant 
 " (using navigation keys and enter)
 inoremap <expr> k       pumvisible() ? "\<C-n>" : "\k"
 inoremap <expr> l       pumvisible() ? "\<C-p>" : "\l" 
 inoremap <expr> <CR>    pumvisible() ? "\<C-y>" : "\<CR>" 
+
+" Sometimes I just want to use the mouse for scrolling
+:set mouse=a
+:map <MouseDown> 5<c-y>
+:map <MouseUp> 5<c-e>
 
 " ======================
 " Plugins Configurations
@@ -125,9 +129,20 @@ autocmd VimEnter * DoShowMarks!
 " Chose syntax checker for python 
 let g:syntastic_python_checkers=['pyflakes']
 ""let g:syntastic_python_checkers=['flake8']    TODO
+" Chose syntax checker for C
+""let g:syntastic_c_checkers=['gcc']
 
 " === jedi-vim ===
 " don't automatically open completion menu
 let g:jedi#popup_on_dot = 0
 " don't open new tab, when jumping to definition
 let g:jedi#use_tabs_not_buffers = 0
+
+" === clang_complete ===
+" Open menu only on demand
+let g:clang_complete_auto = 0
+" Close the preview window after selection of entry
+let g:clang_close_preview = 1
+" Completion menu (provided by clang_complete) with ctrl+space for C/C++
+autocmd FileType c inoremap <Nul> <c-x><c-u>
+autocmd FileType cpp inoremap <Nul> <c-x><c-u>
