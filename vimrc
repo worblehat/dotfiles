@@ -41,6 +41,13 @@ nnoremap <c-l>  <c-b>
 " Toggle line numbers and fold column for easy copying:
 nnoremap <F3> :set nonumber!<CR>:set foldcolumn=0<CR>
 
+" Shortcut to run make
+nnoremap <F5> :make<CR>
+
+" The default shortcut to follow links in vim help does not work on german
+" keyboards
+nnoremap ü <C-]>
+
 " Enable use of 256 colors in terminal
 :set t_Co=256
 
@@ -143,6 +150,12 @@ let g:jedi#use_tabs_not_buffers = 0
 let g:clang_complete_auto = 0
 " Close the preview window after selection of entry
 let g:clang_close_preview = 1
+" Use libclang (instead of clang)
+let g:clang_use_library = 1
 " Completion menu (provided by clang_complete) with ctrl+space for C/C++
 autocmd FileType c inoremap <Nul> <c-x><c-u>
 autocmd FileType cpp inoremap <Nul> <c-x><c-u>
+
+" === vim-template ===
+let g:username = "Tobias Marquardt"
+let g:email = "tm@tobix.eu"

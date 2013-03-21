@@ -6,10 +6,19 @@ settings = {
     awl_display_key = "$Q%K|%n$H$C$S";
     awl_display_nokey = "= $N$H$C$S";
     nicklist_width = "15";
+    nicklist_automode = "SCREEN";
   };
 };
 
 servers = (
+  {
+    address = "irc.dal.net";
+    chatnet = "dalnet";
+    port = "6667";
+    use_ssl = "no";
+    ssl_verify = "no";
+    autoconnect = "no";
+  },
   {
     address = "irc.freenode.net";
     chatnet = "freenode";
@@ -27,6 +36,14 @@ servers = (
     autoconnect = "yes";
   },
   {
+    address = "irc.euirc.net";
+    chatnet = "euirc";
+    port = "6667";
+    use_ssl = "no";
+    ssl_verify = "no";
+    autoconnect = "yes";
+  },
+  {
     address = "chat.ankh-morpork.de";
     chatnet = "scheibenwelt";
     port = "6667";
@@ -38,13 +55,17 @@ servers = (
 
 chatnets = {
   freenode = { type = "IRC"; nick = "worblehat"; };
+  dalnet = { type = "IRC"; nick = "worblehat"; };
   "tobix.eu" = { type = "IRC"; nick = "tobias"; };
   scheibenwelt = { type = "IRC"; nick = "Lu-Tze"; };
+  euirc = { type = "IRC"; nick = "worblehat"; };
 };
 
 channels = (
   { name = "#bierkeller"; chatnet = "tobix.eu"; autojoin = "yes"; },
+  { name = "#Don't_Panic"; chatnet = "euirc"; autojoin = "no"; },
   { name = "#qt"; chatnet = "freenode"; autojoin = "no"; },
+  { name = "#sdl"; chatnet = "freenode"; autojoin = "no"; },
   { name = "#python"; chatnet = "freenode"; autojoin = "no"; },
   { name = "#pyqt"; chatnet = "freenode"; autojoin = "no"; },
   { name = "##c++"; chatnet = "freenode"; autojoin = "no"; },
