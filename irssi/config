@@ -67,6 +67,7 @@ channels = (
   { name = "#qt"; chatnet = "freenode"; autojoin = "no"; },
   { name = "#sdl"; chatnet = "freenode"; autojoin = "no"; },
   { name = "#python"; chatnet = "freenode"; autojoin = "no"; },
+  { name = "#python-dev"; chatnet = "freenode"; autojoin = "no"; },
   { name = "#pyqt"; chatnet = "freenode"; autojoin = "no"; },
   { name = "##c++"; chatnet = "freenode"; autojoin = "no"; },
   { name = "#vim"; chatnet = "freenode"; autojoin = "no"; },
@@ -255,7 +256,8 @@ statusbar = {
 # Saved Window Layout
 windows = {
   1 = { immortal = "yes"; name = "(status)"; level = "ALL"; };
-  2 = {
+  2 = { name = "hilight"; sticky = "yes"; };
+  3 = {
     items = (
       {
         type = "CHANNEL";
@@ -265,9 +267,18 @@ windows = {
       }
     );
   };
-  3 = { name = "hilight"; sticky = "yes"; };
+  4 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#Don't_Panic";
+        tag = "euirc";
+      }
+    );
+  };
 };
 mainwindows = {
-  2 = { first_line = "6"; lines = "67"; };
-  3 = { first_line = "1"; lines = "5"; };
+  2 = { first_line = "1"; lines = "8"; };
+  3 = { first_line = "9"; lines = "67"; };
 };
