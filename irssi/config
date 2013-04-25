@@ -84,7 +84,7 @@ channels = (
 
 aliases = {
   # Alias for easy identification on freenode: /ID <password>
-  ID = "/msg nickserv identify worblehat";
+  ID = "/msg nickserv identify";
   J = "join";
   WJOIN = "join -window";
   WQUERY = "query -window";
