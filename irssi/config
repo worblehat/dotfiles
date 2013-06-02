@@ -66,7 +66,7 @@ channels = (
   { name = "#Don't_Panic"; chatnet = "euirc"; autojoin = "yes"; },
   { name = "#qt"; chatnet = "freenode"; autojoin = "no"; },
   { name = "#sdl"; chatnet = "freenode"; autojoin = "no"; },
-  { name = "#python"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "#python"; chatnet = "freenode"; autojoin = "no"; },
   { name = "#python-dev"; chatnet = "freenode"; autojoin = "no"; },
   { name = "#pyqt"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "#pyside"; chatnet = "freenode"; autojoin = "yes"; },
@@ -74,7 +74,15 @@ channels = (
   { name = "#vim"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "#Ogre3D"; chatnet = "freenode"; autojoin = "no"; },
   { name = "#git"; chatnet = "freenode"; autojoin = "yes"; },
-  { name = "#latex-de"; chatnet = "freenode"; autojoin = "no"; },
+  { name = "#latex-de"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "#netbeans"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "#nbdev"; chatnet = "freenode"; autojoin = "no"; },
+  { name = "#archlinux"; chatnet = "freenode"; autojoin = "yes"; },
+  { 
+    name = "#archlinux-newbie";
+    chatnet = "freenode";
+    autojoin = "no";
+  },
   {
     name = "#GeflickteTrommel";
     chatnet = "scheibenwelt";

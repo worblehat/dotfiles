@@ -40,15 +40,26 @@ do
     # Some special cases:
     elif [ ${file} == "./MyShell.profile" ]
     then    
-        # Check if KDE Konsole is installed 
-        konsole_dir="${HOME}/.kde/share/apps/konsole/"
-        if [ -d $konsole_dir ]
+        # What's the kde directory?
+        if [ -d "${HOME}/.kde" ]
         then
-            # Link the profile file in the konsole's directory
-            link="${konsole_dir}MyShell.profile" 
-            backup_file $link
-            ln -s "${current_dir}/${file##*/}" $link 
-            echo "Linked ${link} to ${current_dir}/${file##*/}"
+            kde_dir="${HOME}/.kde"
+        elif [ -d "${HOME}/.kde4" ]
+        then
+            kde_dir="${HOME}/.kde4"
+        fi
+        if [ -n "${kde_dir}" ]
+        then
+            # Check if KDE Konsole is installed 
+            konsole_dir="${kde_dir}/share/apps/konsole/"
+            if [ -d $konsole_dir ]
+            then
+                # Link the profile file in the konsole's directory
+                link="${konsole_dir}MyShell.profile" 
+                backup_file $link
+                ln -s "${current_dir}/${file##*/}" $link 
+                echo "Linked ${link} to ${current_dir}/${file##*/}"
+            fi
         fi
     fi
 done
