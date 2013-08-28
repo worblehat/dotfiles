@@ -159,3 +159,8 @@ autocmd FileType cpp inoremap <Nul> <c-x><c-u>
 " === vim-template ===
 let g:username = "Tobias Marquardt"
 let g:email = "tm@tobix.eu"
+
+" Look for .vimrc in the current directory, but disable :autocmd, shell and
+" write commands for security reasons.
+set exrc
+set secure
