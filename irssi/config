@@ -50,7 +50,16 @@ servers = (
     use_ssl = "no";
     ssl_verify = "no";
     autoconnect = "no";
-  }
+  },
+  {
+    address = "irc.chaostreff-dortmund.de";
+    chatnet = "hackint";
+    port = "6697";
+    use_ssl = "yes";
+    ssl_verify = "no";
+    autoconnect = "no";
+  },
+
 );
 
 chatnets = {
@@ -59,6 +68,7 @@ chatnets = {
   "tobix.eu" = { type = "IRC"; nick = "tobias"; };
   scheibenwelt = { type = "IRC"; nick = "Lu-Tze"; };
   euirc = { type = "IRC"; nick = "worblehat"; };
+  hackint = { type = "IRC"; nick = "worblehat"; };
 };
 
 channels = (
@@ -77,17 +87,19 @@ channels = (
   { name = "#latex-de"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "#netbeans"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "#nbdev"; chatnet = "freenode"; autojoin = "no"; },
-  { name = "#archlinux"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "#archlinux"; chatnet = "freenode"; autojoin = "no"; },
+  { name = "#libgdx"; chatnet = "freenode"; autojoin = "yes"; },
   { 
     name = "#archlinux-newbie";
     chatnet = "freenode";
-    autojoin = "no";
+    autojoin = "yes";
   },
   {
     name = "#GeflickteTrommel";
     chatnet = "scheibenwelt";
     autojoin = "yes";
-  }
+  },
+  { name = "#ctdo"; chatnet = "hackint"; autojoin = "yes"; }
 );
 
 
