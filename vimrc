@@ -127,6 +127,7 @@ nmap <F2> :TagbarToggle<CR>
 " === TaskList ===
 " Show Task list 
 nmap <F4> :TaskList<CR>
+" TODO toggle TaskList
 
 " === showmarks ===
 " Show marks in all buffers
@@ -160,6 +161,11 @@ autocmd FileType cpp inoremap <Nul> <c-x><c-u>
 let g:username = "Tobias Marquardt"
 let g:email = "tm@tobix.eu"
 
+" === project ===
+" Toggle project window
+nmap <silent> <F6> <Plug>ToggleProject
+
+"=========================
 " Look for .vimrc in the current directory, but disable :autocmd, shell and
 " write commands for security reasons.
 set exrc
