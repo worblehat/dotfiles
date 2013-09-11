@@ -12,7 +12,10 @@ import os
 def canFindBuiltinHeaders(index, args = []):
   flags = 0
   currentFile = ("test.c", '#include "stddef.h"')
-  tu = index.parse("test.c", args, [currentFile], flags)
+  try:
+    tu = index.parse("test.c", args, [currentFile], flags)
+  except TranslationUnitLoadError, e:
+    return 0
   return len(tu.diagnostics) == 0
 
 # Derive path to clang builtin headers.
@@ -27,6 +30,7 @@ def getBuiltinHeaderPath(library_path):
           library_path + "/../clang",      # gentoo
           library_path + "/clang",         # opensuse
           library_path + "/",              # Google
+          "/usr/lib64/clang",              # x86_64 (openSUSE, Fedora)
           "/usr/lib/clang"
   ]
 
@@ -48,11 +52,10 @@ def getBuiltinHeaderPath(library_path):
   return None
 
 def initClangComplete(clang_complete_flags, clang_compilation_database, \
-                      library_path, user_requested):
+                      library_path):
   global index
 
   debug = int(vim.eval("g:clang_debug")) == 1
-  printWarnings = (user_requested != "0") or debug
 
   if library_path != "":
     Config.set_library_path(library_path)
@@ -62,12 +65,11 @@ def initClangComplete(clang_complete_flags, clang_compilation_database, \
   try:
     index = Index.create()
   except Exception, e:
-    if printWarnings:
-      print "Loading libclang failed, falling back to clang executable. ",
-      if library_path == "":
-        print "Consider setting g:clang_library_path"
-      else:
-        print "Are you sure '%s' contains libclang?" % library_path
+    print "Loading libclang failed, completion won't be available"
+    if library_path == "":
+      print "Consider setting g:clang_library_path"
+    else:
+      print "Are you sure '%s' contains libclang?" % library_path
     return 0
 
   global builtinHeaderPath
@@ -75,7 +77,7 @@ def initClangComplete(clang_complete_flags, clang_compilation_database, \
   if not canFindBuiltinHeaders(index):
     builtinHeaderPath = getBuiltinHeaderPath(library_path)
 
-    if not builtinHeaderPath and printWarnings:
+    if not builtinHeaderPath:
       print "WARNING: libclang can not find the builtin includes."
       print "         This will cause slow code completion."
       print "         Please report the problem."
@@ -96,7 +98,7 @@ def initClangComplete(clang_complete_flags, clang_compilation_database, \
 # Get a tuple (fileName, fileContent) for the file opened in the current
 # vim buffer. The fileContent contains the unsafed buffer content.
 def getCurrentFile():
-  file = "\n".join(vim.current.buffer[:])
+  file = "\n".join(vim.current.buffer[:] + ["\n"])
   return (vim.current.buffer.name, file)
 
 class CodeCompleteTimer:
@@ -160,11 +162,12 @@ def getCurrentTranslationUnit(args, currentFile, fileName, timer,
       timer.registerEvent("Reparsing")
     return tu
 
-  flags = TranslationUnit.PARSE_PRECOMPILED_PREAMBLE
-  tu = index.parse(fileName, args, [currentFile], flags)
-  timer.registerEvent("First parse")
-
-  if tu == None:
+  flags = TranslationUnit.PARSE_PRECOMPILED_PREAMBLE | \
+          TranslationUnit.PARSE_DETAILED_PROCESSING_RECORD
+  try:
+    tu = index.parse(fileName, args, [currentFile], flags)
+    timer.registerEvent("First parse")
+  except TranslationUnitLoadError, e:
     return None
 
   translationUnits[fileName] = tu
@@ -289,7 +292,8 @@ def getCompilationDBParams(fileName):
           continue
         if arg == '-c':
           continue
-        if arg == fileName or os.path.realpath(arg) == fileName:
+        if arg == fileName or \
+           os.path.realpath(os.path.join(cwd, arg)) == fileName:
           continue
         if arg == '-o':
           skip_next = 1;
@@ -363,9 +367,8 @@ def formatResult(result):
   completion = dict()
   returnValue = None
   abbr = ""
-  args_pos = []
-  cur_pos = 0
   word = ""
+  info = ""
 
   for chunk in result.string:
 
@@ -381,22 +384,22 @@ def formatResult(result):
     if chunk.isKindTypedText():
       abbr = chunk_spelling
 
-    chunk_len = len(chunk_spelling)
     if chunk.isKindPlaceHolder():
-      args_pos += [[ cur_pos, cur_pos + chunk_len ]]
-    cur_pos += chunk_len
-    word += chunk_spelling
+      word += snippetsFormatPlaceHolder(chunk_spelling)
+    else:
+      word += chunk_spelling
 
-  menu = word
+    info += chunk_spelling
+
+  menu = info
 
   if returnValue:
     menu = returnValue.spelling + " " + menu
 
-  completion['word'] = word
+  completion['word'] = snippetsAddSnippet(info, word, abbr)
   completion['abbr'] = abbr
   completion['menu'] = menu
-  completion['info'] = word
-  completion['args_pos'] = args_pos
+  completion['info'] = info
   completion['dup'] = 1
 
   # Replace the number that represents a specific kind with a better
@@ -498,6 +501,48 @@ def getAbbr(strings):
     if chunks.isKindTypedText():
       return chunks.spelling
   return ""
+
+def jumpToLocation(filename, line, column):
+  if filename != vim.current.buffer.name:
+    try:
+      vim.command("edit %s" % filename)
+    except:
+      # For some unknown reason, whenever an exception occurs in
+      # vim.command, vim goes crazy and output tons of useless python
+      # errors, catch those.
+      return
+  else:
+    vim.command("normal m'")
+  vim.current.window.cursor = (line, column - 1)
+
+def gotoDeclaration():
+  global debug
+  debug = int(vim.eval("g:clang_debug")) == 1
+  params = getCompileParams(vim.current.buffer.name)
+  line, col = vim.current.window.cursor
+  timer = CodeCompleteTimer(debug, vim.current.buffer.name, line, col, params)
+
+  with workingDir(params['cwd']):
+    with libclangLock:
+      tu = getCurrentTranslationUnit(params['args'], getCurrentFile(),
+                                     vim.current.buffer.name, timer,
+                                     update = True)
+      if tu is None:
+        print "Couldn't get the TranslationUnit"
+        return
+
+      f = File.from_name(tu, vim.current.buffer.name)
+      loc = SourceLocation.from_position(tu, f, line, col + 1)
+      cursor = Cursor.from_location(tu, loc)
+      defs = [cursor.get_definition(), cursor.referenced]
+
+      for d in defs:
+        if d is not None and loc != d.location:
+          loc = d.location
+          jumpToLocation(loc.file.name, loc.line, loc.column)
+          break
+
+  timer.finish()
 
 # Manually extracted from Index.h
 # Doing it by hand is long, error prone and horrible, we must find a way
