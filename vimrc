@@ -17,6 +17,12 @@ noremap l k
 noremap k j
 noremap j h
 
+" Adapt the customized navigation to window navigation, too 
+noremap <c-w>ö <c-w>l
+noremap <c-w>l <c-w>k
+noremap <c-w>k <c-w>j
+noremap <c-w>j <c-w>h
+
 " Disable arrow keys in normal and insert mode (to avoid temptation to use them)
 inoremap  <Up>     <NOP>
 inoremap  <Down>   <NOP>

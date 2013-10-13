@@ -59,7 +59,14 @@ servers = (
     ssl_verify = "no";
     autoconnect = "no";
   },
-
+  {
+    address = "irc.fu-berlin.de";
+    chatnet = "ircnet";
+    port = "6667";
+    use_ssl = "no";
+    ssl_verify = "no";
+    autoconnect = "no";
+  }
 );
 
 chatnets = {
@@ -69,6 +76,7 @@ chatnets = {
   scheibenwelt = { type = "IRC"; nick = "Lu-Tze"; };
   euirc = { type = "IRC"; nick = "worblehat"; };
   hackint = { type = "IRC"; nick = "worblehat"; };
+  ircnet = { type = "IRC"; nick = "worblehat"; };
 };
 
 channels = (
@@ -89,6 +97,10 @@ channels = (
   { name = "#nbdev"; chatnet = "freenode"; autojoin = "no"; },
   { name = "#archlinux"; chatnet = "freenode"; autojoin = "no"; },
   { name = "#libgdx"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "#irssi"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "#pspdev"; chatnet = "freenode"; autojoin = "no"; },
+  { name = "#deadbeefplayer"; chatnet = "freenode"; autojoin = "no"; },
+  { name = "#irssi"; chatnet = "ircnet"; autojoin = "yes"; },
   { 
     name = "#archlinux-newbie";
     chatnet = "freenode";
