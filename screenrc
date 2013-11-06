@@ -1,2 +1,21 @@
-# Enable 256 colors in screen (e.g. needed for vim)
-term screen-256color
+# No startup message
+startup_message off
+
+# Turn off ugly visual bell
+vbell off
+
+# Autodetach when loosing connection
+autodetach on
+
+# Enable 256 color terminal in screen (e.g. needed for vim)
+attrcolor b ".I"
+termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
+defbce on
+
+# Show status bar with list of windows
+#   %-w %+w             modify the displayed list of windows
+#   %50> %<             scroll to current window when too many windows to fit all in statusbar
+#   %n %t               window number,window title
+#   %{= kw}             Color (spanning the whole window width): black(bg) and white(fg) 
+#   ${+b kg} %{-b kw}   Current Window title is displayed in bold green
+hardstatus alwayslastline '%{= kw}|screen: %50>%-w%{+b kg}%n %t%{-b kw}%+w%<|'
