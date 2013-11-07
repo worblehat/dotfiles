@@ -312,6 +312,6 @@ windows = {
   };
 };
 mainwindows = {
-  2 = { first_line = "1"; lines = "8"; };
-  3 = { first_line = "9"; lines = "67"; };
+  2 = { first_line = "1"; lines = "9"; };
+  3 = { first_line = "10"; lines = "30"; };
 };
