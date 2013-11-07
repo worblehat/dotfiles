@@ -2,11 +2,14 @@
 # This script symlinks the files and folders in the current directory to the $HOME of the user appending a
 # dot in front of the name. Files that already have a preceding dot will be ignored. 
 # If the target already exists it is backuped to $HOME/.dotfiles.bck/ before overwriting it.
+# In addition configuration from some kde programs are linked if the correpsonding programs are installed
+# (see 'special' files).
+# NOTE: This script must be in the current directoy when run!
 
 # Files from the repo that should not be linked:
 dont_link=("./dotlink.sh" "./README.md")
 # Files that are not just linked to a dotfile in $HOME:
-special=("./MyShell.profile")
+special=("./MyShell.profile" "yakuakerc")
 # Directory for file backups:
 backup_dir="${HOME}/.dotfiles.bck"
 
@@ -26,6 +29,15 @@ function backup_file() {
     fi
 }
 
+# What's the kde directory (if installed)?
+if [ -d "${HOME}/.kde" ]
+then
+    kde_dir="${HOME}/.kde"
+elif [ -d "${HOME}/.kde4" ]
+then
+    kde_dir="${HOME}/.kde4"
+fi
+
 # Iterate over all non-dot-files 
 for file in ./* 
 do
@@ -37,17 +49,9 @@ do
         # Create the symlink
         ln -s "${current_dir}/${file##*/}" $link 
         echo "Linked ${link} to ${current_dir}/${file##*/}"
-    # Some special cases:
+    # Link special files 
     elif [ ${file} == "./MyShell.profile" ]
     then    
-        # What's the kde directory?
-        if [ -d "${HOME}/.kde" ]
-        then
-            kde_dir="${HOME}/.kde"
-        elif [ -d "${HOME}/.kde4" ]
-        then
-            kde_dir="${HOME}/.kde4"
-        fi
         if [ -n "${kde_dir}" ]
         then
             # Check if KDE Konsole is installed 
@@ -59,7 +63,57 @@ do
                 backup_file $link
                 ln -s "${current_dir}/${file##*/}" $link 
                 echo "Linked ${link} to ${current_dir}/${file##*/}"
+            else
+                echo "KDE Konsole installtion not found."
+            fi
+        fi
+    elif [ ${file} == "./yakuakerc" ]
+    then
+        if [ -n "${kde_dir}" ]
+        then
+            # Check if yakuake is installed
+            yakuake_conf="${kde_dir}/share/config/yakuakerc"
+            if [ -f $yakuake_conf ]
+            then
+                # Link the yakuakerc file
+                backup_file $yakuake_conf
+                ln -s "${current_dir}/${file##*/}" $yakuake_conf
+                echo "Linked ${yakuake_conf} to ${current_dir}/${file##*/}"
+            else
+                echo "Yakuake installtion not found."
             fi
         fi
     fi
 done
+
+# Include .bash_additions in .bashrc
+if [ -f ~/.bashrc ]
+then
+    if grep -q ". ~/.bash_additions" ~/.bashrc
+    then
+        echo ".bashrc seems to already include .bash_additions."
+    else
+        echo ".bashrc does not include .bash_additions"
+    fi
+    while true; do
+        read -p "Should .bashrc be edited to include .bash_additions? [(y)es or (n)o]: " answer
+        case $answer in
+            [Yy]* )
+                echo "" >> ~/.bashrc 
+                echo "# Include .bash_additions" >> ~/.bashrc 
+                echo "if [ -f ~/.bash_additions ]; then" >> ~/.bashrc
+                echo "   . ~/.bash_additions" >> ~/.bashrc 
+                echo "fi" >> ~/.bashrc
+                echo "" >> ~/.bashrc 
+                echo ".bash_additions included."
+                break
+                ;;
+            [Nn]* ) 
+                echo ".bash_additions not included."
+                break
+                ;;
+        esac
+    done
+else
+    echo ".bashrc not found. .bash_additions not included."
+fi
