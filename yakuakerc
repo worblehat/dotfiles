@@ -1,0 +1,22 @@
+[$Version]
+update_info=yakuake.upd:2.9.9-startupnotification
+
+[Appearance]
+BackgroundColor=0,0,0
+
+[Colors]
+CurrentPalette=Forty Colors
+
+[Desktop Entry]
+DefaultProfile=MyShell.profile
+
+[Dialogs]
+FirstRun=false
+
+[Favorite Profiles]
+Favorites=
+
+[Window]
+DynamicTabTitles=true
+KeepAbove=false
+ToggleToFocus=true
