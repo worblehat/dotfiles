@@ -7,7 +7,8 @@ vbell off
 # Autodetach when loosing connection
 autodetach on
 
-# Enable 256 color terminal in screen (e.g. needed for vim)
+# Enable 256 color terminal in screen 
+# Make sure, TERM environment variable is set to 'xterm'! (e.g. in .bashrc)
 attrcolor b ".I"
 termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
 defbce on
@@ -18,4 +19,9 @@ defbce on
 #   %n %t               window number,window title
 #   %{= kw}             Color (spanning the whole window width): black(bg) and white(fg) 
 #   ${+b kg} %{-b kw}   Current Window title is displayed in bold green
-hardstatus alwayslastline '%{= kw}|screen: %50>%-w%{+b kg}%n %t%{-b kw}%+w%<|'
+hardstatus alwayslastline '%{= kw}[screen: %50>%-w%{+b kg}%n %t%{-b kw}%+w%<]'
+
+# Window titles are set to the running command. Otherwise the following default is used. 
+# The shell must send an escape sequence in the promp (e.g. via bash's PROMPT_COMMAND) and
+# the promp must end with '$ '.
+shelltitle "$ |bash"

@@ -1,0 +1,16 @@
+# To use this file make sure .bashrc contains:
+#   if [ -f ~/.bash_additions ]; then
+#        . ~/.bash_additions
+#   fi
+
+# Aliases
+alias l='ls -Clah'
+alias n='netstat -natp'
+alias p='ps ax'
+alias g='grep'
+
+# Send escape sequence as part of prompt (needed for dynamic window titles in screen)
+PROMPT_COMMAND='echo -ne "\033k\033\134"'
+
+# Screen uses xterm to show 256 colors (see .screenrc). So we set this as default
+TERM=xterm
