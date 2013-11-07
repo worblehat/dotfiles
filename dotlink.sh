@@ -9,7 +9,7 @@
 # Files from the repo that should not be linked:
 dont_link=("./dotlink.sh" "./README.md")
 # Files that are not just linked to a dotfile in $HOME:
-special=("./MyShell.profile" "yakuakerc")
+special=("./MyShell.profile" "./yakuakerc")
 # Directory for file backups:
 backup_dir="${HOME}/.dotfiles.bck"
 
@@ -80,7 +80,7 @@ do
                 ln -s "${current_dir}/${file##*/}" $yakuake_conf
                 echo "Linked ${yakuake_conf} to ${current_dir}/${file##*/}"
             else
-                echo "Yakuake installtion not found."
+                echo "Yakuake installation not found."
             fi
         fi
     fi
