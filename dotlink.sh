@@ -9,7 +9,7 @@
 # Files from the repo that should not be linked:
 dont_link=("./dotlink.sh" "./README.md")
 # Files that are not just linked to a dotfile in $HOME:
-special=("./MyShell.profile" "./yakuakerc")
+special=("./MyShell.profile" "./yakuakerc" "./mimeapps.list")
 # Directory for file backups:
 backup_dir="${HOME}/.dotfiles.bck"
 
@@ -82,6 +82,19 @@ do
             else
                 echo "Yakuake installation not found."
             fi
+        fi
+    elif [ ${file} == "./mimeapps.list" ]
+    then
+        local_app_dir="${HOME}/.local/share/applications/"
+        if [ -d $local_app_dir ]
+        then
+            # Link the mimeapps.list file
+            link="${local_app_dir}${file##*/}"
+            backup_file $link
+            ln -s "${current_dir}/${file##*/}" $link
+            echo "Linked ${link} to ${current_dir}/${file##*/}"
+        else
+            echo "Directory ~/.local/share/applications/ does not exist. mimeapps.list not installed."
         fi
     fi
 done

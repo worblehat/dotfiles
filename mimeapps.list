@@ -1,0 +1,13 @@
+[Added Associations]
+application/pdf=mupdf.desktop;acroread.desktop;kde4-okularApplication_pdf.desktop;gimp.desktop;
+audio/mpeg=vlc.desktop;smplayer_enqueue.desktop;smplayer.desktop;kde4-amarok.desktop;
+audio/x-mpegurl=vlc.desktop;smplayer_enqueue.desktop;brasero.desktop;smplayer.desktop;kde4-amarok.desktop;vim-2.desktop;kde4-kate.desktop;wine-extension-txt.desktop;
+image/svg+xml=inkscape.desktop;gimp.desktop;kde4-rekonq.desktop;wine-extension-xml.desktop;firefox.desktop;kde4-kate.desktop;wine-extension-txt.desktop;
+text/html=firefox.desktop;kde4-kate.desktop;kde4-rekonq.desktop;thunderbird.desktop;
+text/plain=vim-2.desktop;
+text/x-c++hdr=vim.desktop;Nokia-qtcreator.desktop;vim-2.desktop;kde4-kate.desktop;wine-extension-txt.desktop;
+text/x-c++src=vim.desktop;kde4-kate.desktop;Nokia-qtcreator.desktop;vim-2.desktop;wine-extension-txt.desktop;
+text/x-csrc=vim.desktop;
+video/quicktime=vlc.desktop;kde4-dragonplayer.desktop;
+video/x-flv=vlc.desktop;smplayer_enqueue.desktop;smplayer.desktop;
+video/x-msvideo=vlc.desktop;smplayer_enqueue.desktop;kde4-dragonplayer.desktop;smplayer.desktop;
