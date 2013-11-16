@@ -4,7 +4,8 @@
 #   fi
 
 # Aliases
-alias l='ls -Clah'
+alias l='ls -Clh'
+alias ll='ls -Clah'
 alias n='netstat -natp'
 alias p='ps ax'
 alias g='grep'
