@@ -3,6 +3,7 @@ update_info=yakuake.upd:2.9.9-startupnotification
 
 [Appearance]
 BackgroundColor=0,0,0
+Skin=default
 
 [Colors]
 CurrentPalette=Forty Colors
@@ -18,5 +19,10 @@ Favorites=
 
 [Window]
 DynamicTabTitles=true
+HideBorderOnFullScreen=true
+HideTabsOnFullScreen=true
+HideTitleOnFullScreen=true
 KeepAbove=false
+NewTabInCurrentDir=true
+ShowTabBar=true
 ToggleToFocus=true

@@ -5,11 +5,12 @@
 # In addition configuration from some kde programs are linked if the correpsonding programs are installed
 # (see 'special' files).
 # NOTE: This script must be in the current directoy when run!
+# TODO link konsolerc
 
 # Files from the repo that should not be linked:
 dont_link=("./dotlink.sh" "./README.md")
 # Files that are not just linked to a dotfile in $HOME:
-special=("./MyShell.profile" "./yakuakerc" "./mimeapps.list")
+special=("./MyShell.profile" "./yakuakerc" "./mimeapps.list" "./konsolerc")
 # Directory for file backups:
 backup_dir="${HOME}/.dotfiles.bck"
 

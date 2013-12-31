@@ -12,6 +12,9 @@ ShowMenuBar=false
 TabBarMode=0
 TabBarPosition=1
 
+[Interaction Options]
+OpenLinksByDirectClickEnabled=true
+
 [Scrolling]
 HistorySize=10000
 ScrollBarPosition=2
