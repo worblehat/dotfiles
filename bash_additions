@@ -15,3 +15,8 @@ PROMPT_COMMAND='echo -ne "\033k\033\0134"'
 
 # Screen uses xterm to show 256 colors (see .screenrc). So we set this as default
 TERM=xterm
+
+# Add user specific binaries to PATH
+if [ -d "$HOME/usr/bin" ] ; then
+  PATH="$PATH:$HOME/usr/bin"
+fi
