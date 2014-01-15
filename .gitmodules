@@ -1,0 +1,30 @@
+[submodule "vim/bundle/bufkill"]
+	path = vim/bundle/bufkill
+	url = https://github.com/cometsong/bufkill.vim.git
+[submodule "vim/bundle/clang_complete"]
+	path = vim/bundle/clang_complete
+	url = https://github.com/Rip-Rip/clang_complete.git
+[submodule "vim/bundle/jedi-vim"]
+	path = vim/bundle/jedi-vim
+	url = https://github.com/davidhalter/jedi-vim.git
+[submodule "vim/bundle/vim-project"]
+	path = vim/bundle/vim-project
+	url = https://github.com/shemerey/vim-project.git
+[submodule "vim/bundle/vim-showmarks"]
+	path = vim/bundle/vim-showmarks
+	url = https://github.com/zakj/vim-showmarks.git
+[submodule "vim/bundle/syntastic"]
+	path = vim/bundle/syntastic
+	url = https://github.com/scrooloose/syntastic.git
+[submodule "vim/bundle/tagbar"]
+	path = vim/bundle/tagbar
+	url = https://github.com/majutsushi/tagbar.git
+[submodule "vim/bundle/TaskList"]
+	path = vim/bundle/TaskList
+	url = https://github.com/vim-scripts/TaskList.vim.git
+[submodule "vim/bundle/vim-template"]
+	path = vim/bundle/vim-template
+	url = https://github.com/aperezdc/vim-template.git
+[submodule "vim/bundle/LaTeX-Box"]
+	path = vim/bundle/LaTeX-Box
+	url = https://github.com/LaTeX-Box-Team/LaTeX-Box.git
