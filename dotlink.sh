@@ -132,3 +132,21 @@ then
 else
     echo ".bashrc not found. .bash_additions not included."
 fi
+
+# Init git submodules
+while true; do
+    read -p "Should git submodules (vim plugins) be downloaded now? [(y)es or (n)o]: " answer
+    case $answer in
+        [Yy]* )
+            echo "Initialize and update submodules...."
+            git submodule update --init --recursive
+            break
+            ;;
+        [Nn]* )
+            echo "Submodules not initialized and updated."
+            break
+            ;;
+    esac
+done
+
+echo "Finished."
