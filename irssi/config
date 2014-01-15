@@ -100,6 +100,7 @@ channels = (
   { name = "#irssi"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "#pspdev"; chatnet = "freenode"; autojoin = "no"; },
   { name = "#deadbeefplayer"; chatnet = "freenode"; autojoin = "no"; },
+  { name = "#fosdem"; chatnet = "freenode"; autojoin = "no"; },
   { name = "#irssi"; chatnet = "ircnet"; autojoin = "yes"; },
   { 
     name = "#archlinux-newbie";

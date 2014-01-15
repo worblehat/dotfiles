@@ -55,7 +55,7 @@ nnoremap <F5> :make<CR>
 nnoremap ü <C-]>
 
 " Enable use of 256 colors in terminal
-:set t_Co=256
+set t_Co=256
 
 " Color scheme
 colorscheme molokai
@@ -151,6 +151,8 @@ let g:syntastic_python_checkers=['pyflakes']
 let g:jedi#popup_on_dot = 0
 " don't open new tab, when jumping to definition
 let g:jedi#use_tabs_not_buffers = 0
+
+let g:jedi#completions_command = "<C-Space>"
 
 " === clang_complete ===
 " Open menu only on demand
