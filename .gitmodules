@@ -25,3 +25,6 @@
 [submodule "vim/bundle/LaTeX-Box"]
 	path = vim/bundle/LaTeX-Box
 	url = https://github.com/LaTeX-Box-Team/LaTeX-Box.git
+[submodule "vim/bundle/showmarks"]
+	path = vim/bundle/showmarks
+	url = https://github.com/jacquesbh/vim-showmarks
