@@ -17,6 +17,9 @@ FirstRun=false
 [Favorite Profiles]
 Favorites=
 
+[Shortcuts]
+close-session=none
+
 [Window]
 DynamicTabTitles=true
 HideBorderOnFullScreen=true
