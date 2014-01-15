@@ -11,6 +11,10 @@ syntax on
 " Use filetype specific plugins and  indentation rules if available
 filetype plugin indent on
 
+" Remap leader key (used for custom mappings in normal mode)
+let mapleader=","
+let maplocalleader="\\"
+
 " Navigation on jklö (for german qwertz keyboard layout!)
 noremap ö l
 noremap l k
@@ -34,25 +38,37 @@ noremap   <Left>   <NOP>
 noremap   <Right>  <NOP>
 
 " Save with ctrl+s in normal and insert mode
-nmap <c-s>	:w<CR>
-imap <c-s>  <ESC>:w<CR>a
+nnoremap <c-s>	:w<CR> 
+inoremap <c-s>  <ESC>:w<CR>a
+" ...or with leader key mapping in normal mode (because <c-s> is not always
+" usable in terminal emulators)
+nnoremap <leader>w :w<CR>
 
 " Easier buffer switching
-nnoremap <c-b>  :buffers<CR>:buffer<Space>
+nnoremap <leader>b  :buffers<CR>:buffer<Space>
+
+" Quickly jump to alternate file by double leader
+nnoremap <leader><leader> <c-^>
+
+" Quit current window using the leader key
+nnoremap <leader>q :q<CR>
+
+" Help shortcut (in addition to F1)
+nnoremap <leader>1 :help<CR>
 
 " Fast scrolling with ctrl and navigation keys
 nnoremap <c-k>  <c-f>
 nnoremap <c-l>  <c-b>
 
 " Toggle line numbers and fold column for easy copying:
-nnoremap <F3> :set nonumber!<CR>:set foldcolumn=0<CR>
+nmap <leader>7 :set nonumber!<CR>:set foldcolumn=0<CR>
 
 " Shortcut to run make
-nnoremap <F5> :make<CR>
+nmap <leader>6 :make<CR>
 
 " The default shortcut to follow links in vim help does not work on german
 " keyboards
-nnoremap ü <C-]>
+nnoremap <leader>h <C-]>
 
 " Enable use of 256 colors in terminal
 set t_Co=256
@@ -128,11 +144,11 @@ inoremap <expr> <CR>    pumvisible() ? "\<C-y>" : "\<CR>"
 
 " === TagBar ===
 " Toggle tagbar
-nmap <F2> :TagbarToggle<CR>
+nmap <silent> <leader>2 :TagbarToggle<CR>
 
 " === TaskList ===
 " Show Task list 
-nmap <F4> :TaskList<CR>
+nmap <silent> <leader>4 :TaskList<CR>
 " TODO toggle TaskList
 
 " === showmarks ===
@@ -145,14 +161,28 @@ let g:syntastic_python_checkers=['pyflakes']
 ""let g:syntastic_python_checkers=['flake8']    TODO
 " Chose syntax checker for C
 ""let g:syntastic_c_checkers=['gcc']
+" Run syntax cheks when buffers are first loaded
+let g:syntastic_check_on_open=1
+" Shortcut for showing the list of errors
+nnoremap <silent> <leader>5 :Errors<CR>
+" Shortcut for running syntax checks manually
+nnoremap <leader>s :SyntasticCheck<CR>
+" Customized error symbols
+let g:syntastic_error_symbol='✗'
+let g:syntastic_style_error_symbol='S✗'
+let g:syntastic_warning_symbol='⚠'
+let g:syntastic_style_warning_symbol='S⚠'
 
 " === jedi-vim ===
 " don't automatically open completion menu
 let g:jedi#popup_on_dot = 0
 " don't open new tab, when jumping to definition
 let g:jedi#use_tabs_not_buffers = 0
-
-let g:jedi#completions_command = "<C-Space>"
+" list all occurences of a name
+let g:jedi#related_names_command = "<leader>l"
+" Show docstring in separate window
+let g:jedi#pydoc = "<leader>k"
+let g:jedi#show_call_signatures = "<leader>c"
 
 " === clang_complete ===
 " Open menu only on demand
@@ -171,7 +201,7 @@ let g:email = "tm@tobix.eu"
 
 " === project ===
 " Toggle project window
-nmap <silent> <F6> <Plug>ToggleProject
+nmap <silent> <leader>3 <Plug>ToggleProject
 
 "=========================
 " Look for .vimrc in the current directory, but disable :autocmd, shell and
