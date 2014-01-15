@@ -178,10 +178,10 @@ let g:syntastic_style_warning_symbol='S⚠'
 let g:jedi#popup_on_dot = 0
 " don't open new tab, when jumping to definition
 let g:jedi#use_tabs_not_buffers = 0
-" list all occurences of a name
-let g:jedi#related_names_command = "<leader>l"
+" list all usages of a name
+let g:jedi#usages_command = "<leader>u"
 " Show docstring in separate window
-let g:jedi#pydoc = "<leader>k"
+let g:jedi#documentation_command = "<leader>k"
 let g:jedi#show_call_signatures = "<leader>c"
 
 " === clang_complete ===
