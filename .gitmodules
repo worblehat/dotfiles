@@ -10,9 +10,6 @@
 [submodule "vim/bundle/vim-project"]
 	path = vim/bundle/project
 	url = https://github.com/shemerey/vim-project.git
-[submodule "vim/bundle/vim-showmarks"]
-	path = vim/bundle/ShowMarks
-	url = https://github.com/zakj/vim-showmarks.git
 [submodule "vim/bundle/syntastic"]
 	path = vim/bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git
