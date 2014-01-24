@@ -5,8 +5,21 @@
 	editor = vim
 [merge]
 	tool = vimdiff
+[push]
+    default = simple
 [color]
 	branch = auto
 	diff = auto
 	interactive = auto
 	status = auto
+[alias]
+    cm = commit -m
+    co = checkout
+    df = diff
+    dfs = diff --staged
+    ft = fetch
+    k = !gitk --all
+    ps = push
+    rb = rebase
+    sh = stash
+    st = status
