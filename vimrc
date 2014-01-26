@@ -203,6 +203,10 @@ let g:email = "tm@tobix.eu"
 " Toggle project window
 nmap <silent> <leader>3 <Plug>ToggleProject
 
+" === startify ===
+let g:startify_bookmarks = [ '~/.vimrc' ]
+let g:startify_change_to_dir = 0
+
 "=========================
 " Look for .vimrc in the current directory, but disable :autocmd, shell and
 " write commands for security reasons.
