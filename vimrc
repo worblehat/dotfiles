@@ -53,6 +53,9 @@ nnoremap <leader><leader> <c-^>
 " Quit current window using the leader key
 nnoremap <leader>q :q<CR>
 
+" Quit all windows using the leader key
+nnoremap <leader>qa :qa<CR>
+
 " Help shortcut (in addition to F1)
 nnoremap <leader>1 :help<CR>
 
