@@ -10,6 +10,7 @@
 [submodule "vim/bundle/vim-project"]
 	path = vim/bundle/project
 	url = https://github.com/shemerey/vim-project.git
+    ignore = untracked
 [submodule "vim/bundle/syntastic"]
 	path = vim/bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git
