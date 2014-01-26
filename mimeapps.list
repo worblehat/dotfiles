@@ -7,6 +7,7 @@ audio/mpeg=deadbeef.desktop;mplayer.desktop;vlc.desktop;
 audio/x-mpegurl=deadbeef.desktop;
 audio/x-wav=deadbeef.desktop;mplayer.desktop;vlc.desktop;
 image/jpeg=kde4-gwenview.desktop;
+text/html=firefox.desktop;kde4-kfmclient_html.desktop;vim.desktop;kde4-kate.desktop;libreoffice-writer.desktop;kde4-okularApplication_txt.desktop;gvim.desktop;vim-3.desktop;
 text/plain=vim.desktop;kate-2.desktop;
 video/mp4=vlc.desktop;deadbeef.desktop;mplayer.desktop;
 video/x-flv=vlc.desktop;mplayer.desktop;
