@@ -101,6 +101,10 @@ do
     fi
 done
 
+# Generate less configuration ($HOME/.less) from .lesskey
+echo "Generating less configuration."
+lesskey
+
 # Include .bash_additions in .bashrc
 if [ -f ~/.bashrc ]
 then

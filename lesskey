@@ -1,0 +1,8 @@
+# Custom key-bindings for less.
+# To use these bindings "lesskey" must be invoked, which
+# generates .less
+
+#command
+k   forw-line
+l   back-line
+
