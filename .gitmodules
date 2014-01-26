@@ -29,3 +29,6 @@
 [submodule "vim/bundle/showmarks"]
 	path = vim/bundle/showmarks
 	url = https://github.com/jacquesbh/vim-showmarks
+[submodule "vim/bundle/startify"]
+	path = vim/bundle/startify
+	url = https://github.com/mhinz/vim-startify.git
