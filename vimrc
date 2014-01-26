@@ -158,9 +158,9 @@ autocmd VimEnter * DoShowMarks!
 " === Syntastic ===
 " Chose syntax checker for python 
 let g:syntastic_python_checkers=['pyflakes']
-""let g:syntastic_python_checkers=['flake8']    TODO
 " Chose syntax checker for C
-""let g:syntastic_c_checkers=['gcc']
+let g:syntastic_c_compiler='clang'
+let g:syntastic_c_checkers=['gcc']
 " Run syntax cheks when buffers are first loaded
 let g:syntastic_check_on_open=1
 " Shortcut for showing the list of errors
