@@ -168,4 +168,55 @@ while true; do
     esac
 done
 
+# Download git-completion.sh
+while true; do
+    read -p "Should the git completion script for bash be downloaded and linked now? [(y)es or (n)o]: " answer
+    case $answer in
+        [Yy]* )
+            echo "Downloading .git-completion.bash to ~..."
+            wget https://raw.github.com/git/git/master/contrib/completion/git-completion.bash -O ${HOME}/.git-completion.bash &> /dev/null
+            if [ $? -ne 0 ]; then
+                echo "Error: Can't download git completion script!"
+                break
+            fi
+            echo "git completion script download finished."
+            include_gc_script=true
+            if grep -q ". ~/.git-completion.bash" ~/.bashrc
+            then
+                echo ".bashrc seems to already include git-completion.bash"
+                while true; do
+                    read -p "Should .bashrc be edited to include git-completion.bash? [(y)es or (n)o]: " answer
+                    case $answer in
+                        [Yy]* )
+                            include_gc_script=true
+                            break
+                            ;;
+                        [Nn]* ) 
+                            include_gc_script=false
+                            break
+                            ;;
+                    esac
+                done
+            fi
+            if [ "$include_gc_script" == "true" ]
+            then
+                echo "" >> ~/.bashrc
+                echo "# Include ./git-completion.bash" >> ~/.bashrc 
+                echo "if [ -f ~/.git-completion.bash ]; then" >> ~/.bashrc
+                echo "   . ~/.git-completion.bash" >> ~/.bashrc 
+                echo "fi" >> ~/.bashrc
+                echo "" >> ~/.bashrc 
+                echo "git-completion.bash included."
+            else
+                echo "git-completion.bash not included."
+            fi
+            break
+            ;;
+        [Nn]* )
+            echo "Git completion script not downlaoded."
+            break
+            ;;
+    esac
+done
+
 echo "Finished."
