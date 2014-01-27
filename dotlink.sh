@@ -31,6 +31,21 @@ function backup_file() {
     fi
 }
 
+if ! ping -c 1 github.com &> /dev/null
+then
+    while true; do
+        read -p "Can't connect to github. Continue anyway? [(y)es or (n)o]: " answer
+        case $answer in
+            [Yy]* )
+                break
+                ;;
+            [Nn]* )
+                exit 1
+                ;;
+        esac
+    done
+fi
+
 # What's the kde directory (if installed)?
 if [ -d "${HOME}/.kde" ]
 then
