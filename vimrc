@@ -73,10 +73,6 @@ nmap <leader>6 :make<CR>
 " keyboards
 nnoremap <leader>h <C-]>
 
-" Toggle folding with leader key shortcut
-nnoremap <leader>f za
-nnoremap <leader>fa zi
-
 " Disable folding at startup
 set nofoldenable
 
