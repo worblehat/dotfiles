@@ -73,6 +73,13 @@ nmap <leader>6 :make<CR>
 " keyboards
 nnoremap <leader>h <C-]>
 
+" Toggle folding with leader key shortcut
+nnoremap <leader>f za
+nnoremap <leader>fa zi
+
+" Disable folding at startup
+set nofoldenable
+
 " Enable use of 256 colors in terminal
 set t_Co=256
 
@@ -209,6 +216,9 @@ nmap <silent> <leader>3 <Plug>ToggleProject
 " === startify ===
 let g:startify_bookmarks = [ '~/.vimrc' ]
 let g:startify_change_to_dir = 0
+
+" === SimpylFold  ===
+let g:SimpylFold_docstring_preview = 1
 
 "=========================
 " Look for .vimrc in the current directory, but disable :autocmd, shell and
