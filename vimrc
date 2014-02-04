@@ -144,6 +144,10 @@ inoremap <expr> <CR>    pumvisible() ? "\<C-y>" : "\<CR>"
 :map <MouseDown> 5<c-y>
 :map <MouseUp> 5<c-e>
 
+" Hightlight white space errors in Python
+" (See the default python syntax file for details)
+let python_space_error_highlight = 1
+
 " ======================
 " Plugins Configurations
 " ======================
