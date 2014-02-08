@@ -37,6 +37,11 @@ noremap   <Down>   <NOP>
 noremap   <Left>   <NOP>
 noremap   <Right>  <NOP>
 
+" Map <c-space> to trigger omnicompletion. Some terminals interpret <c-space> as
+" <c-@> (which is a build in vim mapping), so we need to map it as well.
+inoremap <c-space> <c-x><c-o>
+inoremap <c-@> <c-x><c-o>
+
 " Save with ctrl+s in normal and insert mode
 nnoremap <c-s>	:w<CR> 
 inoremap <c-s>  <ESC>:w<CR>a
