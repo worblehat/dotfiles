@@ -225,6 +225,13 @@ let g:startify_change_to_dir = 0
 " === SimpylFold  ===
 let g:SimpylFold_docstring_preview = 1
 
+" === Latex-Box ===
+let g:LatexBox_custom_indent = 0    "TODO does not work?
+" Options related to compiling from within vim using latexmk
+let g:LatexBox_latexmk_preview_continuously = 1
+let g:LatexBox_output_type = "pdf"
+let g:LatexBox_quickfix = 2
+
 "=========================
 " Look for .vimrc in the current directory, but disable :autocmd, shell and
 " write commands for security reasons.
