@@ -6,7 +6,8 @@
 [merge]
 	tool = vimdiff
 [push]
-    default = simple
+    #default = simple #requires at least git 1.8
+    default = upstream 
 [color]
 	branch = auto
 	diff = auto
