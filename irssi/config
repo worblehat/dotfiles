@@ -28,6 +28,14 @@ servers = (
     autoconnect = "no";
   },
   {
+    address = "irc.gnome.org";
+    chatnet = "gnome";
+    port = "6667";
+    use_ssl = "no";
+    ssl_verify = "no";
+    autoconnect = "no";
+  },
+  {
     address = "tobix.eu";
     chatnet = "tobix.eu";
     port = "6667";
@@ -77,6 +85,7 @@ chatnets = {
   euirc = { type = "IRC"; nick = "worblehat"; };
   hackint = { type = "IRC"; nick = "worblehat"; };
   ircnet = { type = "IRC"; nick = "worblehat"; };
+  gnome = { type = "IRC"; };
 };
 
 channels = (
