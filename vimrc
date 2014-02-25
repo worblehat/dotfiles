@@ -189,6 +189,7 @@ let g:syntastic_warning_symbol='⚠'
 let g:syntastic_style_warning_symbol='S⚠'
 
 " === jedi-vim ===
+let g:jedi#force_py_version = 3
 " don't automatically open completion menu
 let g:jedi#popup_on_dot = 0
 " don't open new tab, when jumping to definition
