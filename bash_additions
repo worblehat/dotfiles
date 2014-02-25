@@ -20,3 +20,8 @@ TERM=xterm
 if [ -d "$HOME/usr/bin" ] ; then
   PATH="$PATH:$HOME/usr/bin"
 fi
+
+# Add binaries installed via gem to PATH
+if [ -d "$HOME/.gem/ruby/2.1.0/bin" ] ; then
+    PATH="$PATH:$HOME/.gem/ruby/2.1.0/bin"
+fi
