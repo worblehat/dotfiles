@@ -95,26 +95,30 @@ channels = (
   { name = "#sdl"; chatnet = "freenode"; autojoin = "no"; },
   { name = "#python"; chatnet = "freenode"; autojoin = "no"; },
   { name = "#python-dev"; chatnet = "freenode"; autojoin = "no"; },
-  { name = "#pyqt"; chatnet = "freenode"; autojoin = "yes"; },
-  { name = "#pyside"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "#pyqt"; chatnet = "freenode"; autojoin = "no"; },
+  { name = "#pyside"; chatnet = "freenode"; autojoin = "no"; },
   { name = "##c++"; chatnet = "freenode"; autojoin = "no"; },
-  { name = "#vim"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "#vim"; chatnet = "freenode"; autojoin = "no"; },
   { name = "#Ogre3D"; chatnet = "freenode"; autojoin = "no"; },
-  { name = "#git"; chatnet = "freenode"; autojoin = "yes"; },
-  { name = "#latex-de"; chatnet = "freenode"; autojoin = "yes"; },
-  { name = "#netbeans"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "#git"; chatnet = "freenode"; autojoin = "no"; },
+  { name = "#latex-de"; chatnet = "freenode"; autojoin = "no"; },
+  { name = "#netbeans"; chatnet = "freenode"; autojoin = "no"; },
   { name = "#nbdev"; chatnet = "freenode"; autojoin = "no"; },
   { name = "#archlinux"; chatnet = "freenode"; autojoin = "no"; },
-  { name = "#libgdx"; chatnet = "freenode"; autojoin = "yes"; },
-  { name = "#irssi"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "#libgdx"; chatnet = "freenode"; autojoin = "no"; },
+  { name = "#irssi"; chatnet = "freenode"; autojoin = "no"; },
   { name = "#pspdev"; chatnet = "freenode"; autojoin = "no"; },
   { name = "#deadbeefplayer"; chatnet = "freenode"; autojoin = "no"; },
   { name = "#fosdem"; chatnet = "freenode"; autojoin = "no"; },
-  { name = "#irssi"; chatnet = "ircnet"; autojoin = "yes"; },
+  { name = "#libgit2"; chatnet = "freenode"; autojoin = "no"; },
+  { name = "#sparkleshare"; chatnet = "freenode"; autojoin = "no"; },
+  { name = "#c"; chatnet = "freenode"; autojoin = "no"; },
+  { name = "#github"; chatnet = "freenode"; autojoin = "no"; },
+  { name = "#irssi"; chatnet = "ircnet"; autojoin = "no"; },
   { 
     name = "#archlinux-newbie";
     chatnet = "freenode";
-    autojoin = "yes";
+    autojoin = "no";
   },
   {
     name = "#GeflickteTrommel";
