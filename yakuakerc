@@ -3,7 +3,7 @@ update_info=yakuake.upd:2.9.9-startupnotification
 
 [Appearance]
 BackgroundColor=0,0,0
-Skin=plasma-oxygen-panel
+Skin=default
 SkinInstalledWithKns=true
 
 [Colors]
