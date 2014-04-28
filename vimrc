@@ -176,6 +176,8 @@ let g:syntastic_python_checkers=['pyflakes']
 " Chose syntax checker for C
 let g:syntastic_c_compiler='clang'
 let g:syntastic_c_checkers=['gcc']
+" Include directory for syntastic
+let g:syntastic_c_include_dirs = ['/home/tobias/usr/include']
 " Run syntax cheks when buffers are first loaded
 let g:syntastic_check_on_open=1
 " Shortcut for showing the list of errors
@@ -207,6 +209,8 @@ let g:clang_complete_auto = 0
 let g:clang_close_preview = 1
 " Use libclang (instead of clang)
 let g:clang_use_library = 1
+" Additional include directory for clang's auto-completion 
+ let g:clang_user_options = '-I/home/tobias/usr/include'
 " Completion menu (provided by clang_complete) with ctrl+space for C/C++
 autocmd FileType c inoremap <Nul> <c-x><c-u>
 autocmd FileType cpp inoremap <Nul> <c-x><c-u>
