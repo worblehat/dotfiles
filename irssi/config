@@ -324,18 +324,8 @@ windows = {
       }
     );
   };
-  4 = {
-    items = (
-      {
-        type = "CHANNEL";
-        chat_type = "IRC";
-        name = "#Don't_Panic";
-        tag = "euirc";
-      }
-    );
-  };
 };
 mainwindows = {
   2 = { first_line = "1"; lines = "9"; };
-  3 = { first_line = "10"; lines = "30"; };
+  1 = { first_line = "10"; lines = "30"; };
 };
