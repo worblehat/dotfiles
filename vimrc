@@ -8,12 +8,32 @@ execute pathogen#helptags()
 " Syntax highlighting
 syntax on
 
-" Use filetype specific plugins and  indentation rules if available
-filetype plugin indent on
-
 " Remap leader key (used for custom mappings in normal mode)
 let mapleader=","
 let maplocalleader="\\"
+
+" Convert tabs to 4 spaces
+set expandtab
+set shiftwidth=4
+set tabstop=4
+set smarttab
+
+" Use filetype specific plugins and indentation rules if available
+filetype plugin indent on
+
+" Show white space characters
+set list
+
+" Toggle displaying of white space characters
+noremap <leader><space> :set list!<CR>
+
+" on "set list", show tabs (as an arrow followed by proper whitespaces) and
+" trailing whitespaces
+set listchars=tab:▸\ ,trail:˽
+
+" Use hard tabs in C/C++ code
+autocmd FileType c setlocal noexpandtab shiftwidth=4 tabstop=4
+autocmd FileType cpp setlocal noexpandtab shiftwidth=4 tabstop=4
 
 " Navigation on jklö (for german qwertz keyboard layout!)
 noremap ö l
@@ -114,12 +134,6 @@ autocmd! bufwritepost .vimrc source %
 " Used by Tagbar and showmarks to update highlights/marks
 set updatetime=500
 
-" Convert tabs to 4 spaces
-set shiftwidth=4
-set tabstop=4
-set expandtab
-set smarttab
-
 " Ignore case when searchings
 set ignorecase
 
@@ -175,7 +189,7 @@ autocmd VimEnter * DoShowMarks!
 let g:syntastic_python_checkers=['pyflakes']
 " Chose syntax checker for C
 let g:syntastic_c_compiler='clang'
-let g:syntastic_c_checkers=['gcc']
+let g:syntastic_c_checkers=['gcc'] "TODO
 " Include directory for syntastic
 let g:syntastic_c_include_dirs = ['/home/tobias/usr/include']
 " Run syntax cheks when buffers are first loaded
