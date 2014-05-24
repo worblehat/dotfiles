@@ -9,6 +9,7 @@ alias ll='ls -Clah'
 alias n='netstat -natp'
 alias p='ps ax'
 alias g='grep'
+alias pg='ps ax | grep'
 
 # Send escape sequence as part of prompt (needed for dynamic window titles in screen)
 PROMPT_COMMAND='echo -ne "\033k\033\0134"'
