@@ -32,8 +32,10 @@ noremap <leader><space> :set list!<CR>
 set listchars=tab:▸\ ,trail:˽
 
 " Use hard tabs in C/C++ code
-autocmd FileType c setlocal noexpandtab shiftwidth=4 tabstop=4
-autocmd FileType cpp setlocal noexpandtab shiftwidth=4 tabstop=4
+autocmd FileType c,cpp setlocal noexpandtab shiftwidth=4 tabstop=4
+
+" TODO see ":h fo-table"
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " Navigation on jklö (for german qwertz keyboard layout!)
 noremap ö l
