@@ -38,3 +38,6 @@
 [submodule "vim/bundle/vim-qml"]
 	path = vim/bundle/vim-qml
 	url = https://github.com/peterhoeg/vim-qml.git
+[submodule "vim/bundle/pandoc-syntax"]
+	path = vim/bundle/pandoc-syntax
+	url = https://github.com/vim-pandoc/vim-pandoc-syntax.git

@@ -253,6 +253,11 @@ let g:LatexBox_latexmk_preview_continuously = 1
 let g:LatexBox_output_type = "pdf"
 let g:LatexBox_quickfix = 2
 
+" === pandoc-syntax ===
+autocmd BufNewFile,BufRead *.md,*.pd,*.pdc set filetype=pandoc
+"autocmd FileType md,pd,pdc set filetype=pandoc
+let g:pandoc_use_conceal = 0
+
 "=========================
 " Look for .vimrc in the current directory, but disable :autocmd, shell and
 " write commands for security reasons.
