@@ -126,7 +126,7 @@ set laststatus=2
 set number
 
 " Show wrap line
-set colorcolumn=110
+set colorcolumn=80
 highlight ColorColumn ctermbg=234
 
 " Automatic reload .vimrc when it's altered in vim
