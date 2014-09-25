@@ -1,8 +1,12 @@
 import XMonad
 import XMonad.Actions.SpawnOn
-import XMonad.Hooks.ManageDocks
 import XMonad.Util.EZConfig
 import qualified XMonad.StackSet as W
+-- for xmobar:
+import XMonad.Hooks.DynamicLog
+import XMonad.Hooks.ManageDocks
+import XMonad.Util.Run
+import System.IO
 
 myTerminal      = "konsole"
 myBorderWidth   = 3
@@ -36,16 +40,25 @@ myKeyBindings =
     ]
 
 -- defaults are defined in xmonad/XMonad/Config.hs
-main = xmonad $ defaultConfig {
-    terminal             = myTerminal
-    , borderWidth        = myBorderWidth
-    , modMask            = myModMask
-    , focusedBorderColor = myFocusedBorderColor
-    , workspaces         = myWorkspaces
-    , startupHook        = myStartupHook
-    , manageHook         = manageHook defaultConfig
-                            <+> composeAll myManageHook
-                            <+> manageDocks
-                            <+> manageSpawn
-    }
-    `additionalKeys` myKeyBindings
+main = do
+    -- start xmobar
+    xmproc <- spawnPipe "xmobar"
+    xmonad $ defaultConfig
+        { terminal             = myTerminal
+        , borderWidth        = myBorderWidth
+        , modMask            = myModMask
+        , focusedBorderColor = myFocusedBorderColor
+        , workspaces         = myWorkspaces
+        , startupHook        = myStartupHook
+        , manageHook         = manageHook defaultConfig
+                                <+> composeAll myManageHook
+                                <+> manageDocks
+                                <+> manageSpawn
+        , layoutHook = avoidStruts  $  layoutHook defaultConfig
+        -- for xmobar:
+        , logHook = dynamicLogWithPP $ xmobarPP
+            { ppOutput = hPutStrLn xmproc
+            , ppTitle = xmobarColor "green" "" . shorten 50
+            }
+        }
+        `additionalKeys` myKeyBindings
