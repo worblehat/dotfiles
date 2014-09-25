@@ -21,6 +21,8 @@ myKeyBindings =
     , ((myModMask, 0xf6        ), sendMessage Expand )
     , ((myModMask .|. shiftMask, xK_k        ), windows W.swapDown )
     , ((myModMask .|. shiftMask, xK_l        ), windows W.swapUp )
+-- Use KDE's KSnapshot for screenshots
+    , ((0        , xK_Print), spawn "ksnapshot")
     ]
 
 -- defaults are defined in xmonad/XMonad/Config.hs
