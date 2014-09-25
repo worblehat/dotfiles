@@ -22,6 +22,18 @@ if [ -d "$HOME/usr/bin" ] ; then
   PATH="$PATH:$HOME/usr/bin"
 fi
 
+# Add Python modules to PYTHONPATH
+python=("$HOME/usr/lib/python3.4/site-packages"
+        "$HOME/usr/lib/python3.3/site-packages"
+        "$HOME/usr/lib/python3.2/site-packages"
+        "$HOME/usr/lib/python/site-packages"
+       )
+for p in ${python[@]}; do
+    if [ -d $p ] ; then
+        export PYTHONPATH=$PYTHONPATH:$p
+    fi
+done
+
 # Add binaries installed via gem to PATH
 if [ -d "$HOME/.gem/ruby/2.1.0/bin" ] ; then
     PATH="$PATH:$HOME/.gem/ruby/2.1.0/bin"
