@@ -158,10 +158,12 @@ exec setxkbmap de
 exec feh --bg-fill ~/wallpaper.png
 # Keybinding to lock the screen with i3lock
 bindsym $mod+F12 exec i3lock --image=$HOME/wallpaper.png
+# Start KDE's polkit agent to be able to authenticate as root if necessary
+exec --no-startup-id /usr/lib/kde4/libexec/polkit-kde-authentication-agent-1
 # Use ksnapshot for screenshots
 bindsym Print exec ksnapshot
 # Autostart some applications
 exec --no-startup-id i3-msg 'workspace 1; exec firefox'
-exec --no-startup-id i3-msg 'workspace 2; exec konsole'
+exec --no-startup-id i3-msg 'workspace 2; exec dolphin'
 exec --no-startup-id i3-msg 'workspace 2; exec konsole'
 exec --no-startup-id i3-msg 'workspace 3; exec thunderbird'
