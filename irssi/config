@@ -82,6 +82,14 @@ servers = (
     use_ssl = "no";
     ssl_verify = "no";
     autoconnect = "no";
+  },
+  {
+    address = "irc.twice-irc.de";
+    chatnet = "twice-irc";
+    port = "6667";
+    use_ssl = "no";
+    ssl_verify = "no";
+    autoconnect = "no";
   }
 );
 
@@ -95,6 +103,7 @@ chatnets = {
   ircnet = { type = "IRC"; nick = "worblehat"; };
   gnome = { type = "IRC"; nick = "worblehat"; };
   oftc = { type = "IRC"; nick = "worblehat"; };
+  "twice-irc" = { type = "IRC"; nick = "worblehat"; };
 };
 
 channels = (
@@ -122,8 +131,10 @@ channels = (
   { name = "#libgit2"; chatnet = "freenode"; autojoin = "no"; },
   { name = "#sparkleshare"; chatnet = "freenode"; autojoin = "no"; },
   { name = "#c"; chatnet = "freenode"; autojoin = "no"; },
+  { name = "#android-dev"; chatnet = "freenode"; autojoin = "no"; },
   { name = "#github"; chatnet = "freenode"; autojoin = "no"; },
   { name = "#llvm"; chatnet = "oftc"; autojoin = "no"; },
+  { name = "#urwid"; chatnet = "oftc"; autojoin = "no"; },
   { name = "#irssi"; chatnet = "ircnet"; autojoin = "no"; },
   { 
     name = "#archlinux-newbie";
@@ -135,7 +146,8 @@ channels = (
     chatnet = "scheibenwelt";
     autojoin = "yes";
   },
-  { name = "#ctdo"; chatnet = "hackint"; autojoin = "yes"; }
+  { name = "#ctdo"; chatnet = "hackint"; autojoin = "yes"; },
+  { name = "#i3"; chatnet = "twice-irc"; autojoin = "no"; }
 );
 
 
