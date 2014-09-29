@@ -157,20 +157,30 @@ bindsym $mod+r mode "resize"
 
 # Set german keyboard layout on startup
 #exec setxkbmap de # no wm
+
 # Set wallpaper
 exec feh --bg-fill ~/wallpaper.png
+
 # Keybinding to lock the screen with i3lock
 bindsym $mod+F12 exec i3lock --image=$HOME/wallpaper.png
+
 # Start KDE's polkit agent to be able to authenticate as root if necessary
 #exec --no-startup-id /usr/lib/kde4/libexec/polkit-kde-authentication-agent-1 #no wm
+
 # Udiskie for automounting
 # TODO filesystem driver for fat
 # TODO notification demon
 #exec --no-startup-id udiskie --tray #no wm
+
 # Use ksnapshot for screenshots
 bindsym Print exec ksnapshot
+
+# Adjust screen brigthness via special function key
+bindsym XF86MonBrightnessUp exec xbacklight +10
+bindsym XF86MonBrightnessDown exec xbacklight -10
+
 # Autostart some applications
-exec --no-startup-id i3-msg 'workspace 1; exec firefox'
-exec --no-startup-id i3-msg 'workspace 2; exec dolphin'
-exec --no-startup-id i3-msg 'workspace 2; exec konsole'
-exec --no-startup-id i3-msg 'workspace 3; exec thunderbird'
+#exec --no-startup-id i3-msg 'workspace 1; exec firefox'
+#exec --no-startup-id i3-msg 'workspace 2; exec dolphin'
+#exec --no-startup-id i3-msg 'workspace 2; exec konsole'
+#exec --no-startup-id i3-msg 'workspace 3; exec thunderbird'
