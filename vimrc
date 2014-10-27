@@ -8,12 +8,34 @@ execute pathogen#helptags()
 " Syntax highlighting
 syntax on
 
-" Use filetype specific plugins and  indentation rules if available
-filetype plugin indent on
-
 " Remap leader key (used for custom mappings in normal mode)
 let mapleader=","
 let maplocalleader="\\"
+
+" Convert tabs to 4 spaces
+set expandtab
+set shiftwidth=4
+set tabstop=4
+set smarttab
+
+" Use filetype specific plugins and indentation rules if available
+filetype plugin indent on
+
+" Show white space characters
+set list
+
+" Toggle displaying of white space characters
+noremap <leader><space> :set list!<CR>
+
+" on "set list", show tabs (as an arrow followed by proper whitespaces) and
+" trailing whitespaces
+set listchars=tab:▸\ ,trail:˽
+
+" Use hard tabs in C/C++ code
+autocmd FileType c,cpp setlocal noexpandtab shiftwidth=4 tabstop=4
+
+" TODO see ":h fo-table"
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " Navigation on jklö (for german qwertz keyboard layout!)
 noremap ö l
@@ -104,7 +126,7 @@ set laststatus=2
 set number
 
 " Show wrap line
-set colorcolumn=110
+set colorcolumn=80
 highlight ColorColumn ctermbg=234
 
 " Automatic reload .vimrc when it's altered in vim
@@ -113,12 +135,6 @@ autocmd! bufwritepost .vimrc source %
 " Time (ms) after an edit the swap file ist written. 
 " Used by Tagbar and showmarks to update highlights/marks
 set updatetime=500
-
-" Convert tabs to 4 spaces
-set shiftwidth=4
-set tabstop=4
-set expandtab
-set smarttab
 
 " Ignore case when searchings
 set ignorecase
@@ -175,7 +191,7 @@ autocmd VimEnter * DoShowMarks!
 let g:syntastic_python_checkers=['pyflakes']
 " Chose syntax checker for C
 let g:syntastic_c_compiler='clang'
-let g:syntastic_c_checkers=['gcc']
+let g:syntastic_c_checkers=['gcc'] "TODO
 " Include directory for syntastic
 let g:syntastic_c_include_dirs = ['/home/tobias/usr/include']
 " Run syntax cheks when buffers are first loaded
@@ -236,6 +252,11 @@ let g:LatexBox_custom_indent = 0    "TODO does not work?
 let g:LatexBox_latexmk_preview_continuously = 1
 let g:LatexBox_output_type = "pdf"
 let g:LatexBox_quickfix = 2
+
+" === pandoc-syntax ===
+autocmd BufNewFile,BufRead *.md,*.pd,*.pdc set filetype=pandoc
+"autocmd FileType md,pd,pdc set filetype=pandoc
+let g:pandoc_use_conceal = 0
 
 "=========================
 " Look for .vimrc in the current directory, but disable :autocmd, shell and
