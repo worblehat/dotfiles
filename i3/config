@@ -176,8 +176,8 @@ bindsym $mod+F12 exec i3lock --image=$HOME/wallpaper.png
 bindsym Print exec ksnapshot
 
 # Adjust screen brigthness via special function key
-bindsym XF86MonBrightnessUp exec xbacklight +10
-bindsym XF86MonBrightnessDown exec xbacklight -10
+bindsym XF86MonBrightnessUp exec xbacklight +5
+bindsym XF86MonBrightnessDown exec xbacklight -5
 
 # Autostart some applications
 #exec --no-startup-id i3-msg 'workspace 1; exec firefox'
