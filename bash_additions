@@ -43,3 +43,9 @@ fi
 if [ -d "$HOME/.cabal/bin" ] ; then
     PATH="$PATH:$HOME/.cabal/bin"
 fi
+
+# Include ./git-completion.bash
+if [ -f ~/.git-completion.bash ]; then
+   . ~/.git-completion.bash
+fi
+
