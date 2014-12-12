@@ -19,7 +19,8 @@
 "   Only editor tabs instead of buffers -> switch via :ls
 "   No leader key (has to be hardcoded)
 " Configurations I do in Eclipse instead of this file:
-"   Color-Theme
+"   Color-Theme (Color Theme Plugin!)
+"     favourite: Molokai Port
 "   Code-Style (Tabs, Spaces, etc.)
 "     -> Formatter Profile
 "   Whitespace characters:
