@@ -1,0 +1,27 @@
+
+" Searching
+set ignorecase
+set hlsearch
+
+" Unhilight search
+nnoremap <Space> :nohlsearch<CR>
+
+" Show whitespaces by default
+set list
+
+" Navigation on jklö (for german qwertz keyboard layout!)
+noremap ö l
+noremap l k
+noremap k j
+noremap j h
+
+" Adapt the customized navigation to window navigation, too 
+noremap <c-w>ö <c-w>l
+noremap <c-w>l <c-w>k
+noremap <c-w>k <c-w>j
+noremap <c-w>j <c-w>h
+
+" Fast scrolling
+nnoremap <c-k>  <c-f>
+nnoremap <c-l>  <c-b>
+
