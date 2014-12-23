@@ -6,7 +6,6 @@
 # (see 'special' files).
 # NOTE: This script must be in the current directoy when run!
 # TODO link konsolerc
-# TODO add git_completion.sh and add it to bashrc
 
 # Files from the repo that should not be linked:
 dont_link=("./dotlink.sh" "./README.md")
