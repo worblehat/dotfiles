@@ -159,7 +159,7 @@ bindsym $mod+r mode "resize"
 #exec setxkbmap de # no wm
 
 # Set wallpaper
-exec feh --bg-fill ~/wallpaper.png
+exec feh --bg-max ~/wallpaper.png
 
 # Keybinding to lock the screen with i3lock
 bindsym $mod+F12 exec i3lock --image=$HOME/wallpaper.png

@@ -12,10 +12,10 @@ syntax on
 let mapleader=","
 let maplocalleader="\\"
 
-" Convert tabs to 4 spaces
+" Convert tabs to 2 spaces
 set expandtab
-set shiftwidth=4
-set tabstop=4
+set shiftwidth=2
+set tabstop=2
 set smarttab
 
 " Use filetype specific plugins and indentation rules if available
@@ -33,6 +33,9 @@ set listchars=tab:▸\ ,trail:˽
 
 " Use hard tabs in C/C++ code
 autocmd FileType c,cpp setlocal noexpandtab shiftwidth=4 tabstop=4
+
+" tab width in python
+autocmd FileType py setlocal shiftwidth=4 tabstop=4
 
 " TODO see ":h fo-table"
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
@@ -168,6 +171,13 @@ inoremap <expr> <CR>    pumvisible() ? "\<C-y>" : "\<CR>"
 " Hightlight white space errors in Python
 " (See the default python syntax file for details)
 let python_space_error_highlight = 1
+
+" Windows specific setup
+if has("gui_running")
+  if has("gui_win32")
+    set guifont=Consolas
+  endif
+endif
 
 " ======================
 " Plugins Configurations
