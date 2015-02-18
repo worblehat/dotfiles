@@ -10,7 +10,7 @@
 # Files from the repo that should not be linked:
 dont_link=("./dotlink.sh" "./README.md")
 # Files that are not just linked to a dotfile in $HOME:
-special=("./MyShell.profile" "./yakuakerc" "./mimeapps.list" "./konsolerc")
+special=("./MyShell.profile" "./yakuakerc" "./mimeapps.list" "./konsolerc" "./color-schemes")
 # Directory for file backups:
 backup_dir="${HOME}/.dotfiles.bck"
 
