@@ -120,7 +120,7 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 #bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'" # no wm
-bindsym $mod+Shift+e exec qlogout
+bindsym $mod+Shift+e exec oblogout
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -177,7 +177,11 @@ bindsym Print exec ksnapshot
 bindsym XF86MonBrightnessUp exec xbacklight +5
 bindsym XF86MonBrightnessDown exec xbacklight -5
 
+# Float specific windows by default
+for_window [window_role="pop_up"] floating enable
+for_window [class="Oblogout"] floating enable
+
 # Autostart some applications
-exec --no-startup-id i3-msg 'workspace 2; exec konsole'
-exec --no-startup-id i3-msg 'workspace 3; exec firefox'
-exec --no-startup-id i3-msg 'workspace 4; exec konsole'
+#exec --no-startup-id i3-msg 'workspace 2; exec konsole'
+#exec --no-startup-id i3-msg 'workspace 3; exec firefox'
+#exec --no-startup-id i3-msg 'workspace 4; exec konsole'
