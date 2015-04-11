@@ -19,7 +19,10 @@ TERM=xterm
 
 # Add user specific binaries to PATH
 if [ -d "$HOME/usr/bin" ] ; then
-  PATH="$PATH:$HOME/usr/bin"
+  PATH="$HOME/usr/bin:$PATH"
+fi
+if [ -d "$HOME/.local/bin" ] ; then
+  PATH="$HOME/.local/bin:$PATH"
 fi
 
 # Add Python modules to PYTHONPATH
@@ -37,6 +40,9 @@ done
 # Add binaries installed via gem to PATH
 if [ -d "$HOME/.gem/ruby/2.1.0/bin" ] ; then
     PATH="$PATH:$HOME/.gem/ruby/2.1.0/bin"
+fi
+if [ -d "$HOME/.gem/ruby/2.2.0/bin" ] ; then
+    PATH="$PATH:$HOME/.gem/ruby/2.2.0/bin"
 fi
 
 # Add binaries installed via cabal to PATH
