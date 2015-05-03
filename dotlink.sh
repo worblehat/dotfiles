@@ -10,7 +10,7 @@
 # Files from the repo that should not be linked:
 dont_link=("./dotlink.sh" "./README.md")
 # Files that are not just linked to a dotfile in $HOME:
-special=("./MyShell.profile" "./yakuakerc" "./mimeapps.list" "./konsolerc" "./color-schemes")
+special=("./prefs.xml" "./MyShell.profile" "./yakuakerc" "./mimeapps.list" "./konsolerc" "./color-schemes")
 # Directory for file backups:
 backup_dir="${HOME}/.dotfiles.bck"
 
@@ -72,6 +72,8 @@ do
         then
             # Check if KDE Konsole is installed 
             konsole_dir="${kde_dir}/share/apps/konsole/"
+            #TODO nicht mehr aktuell
+            # Konsole-Ordner für profile jetzt unter .local/share/konsole
             if [ -d $konsole_dir ]
             then
                 # Link the profile file in the konsole's directory
@@ -112,6 +114,15 @@ do
         else
             echo "Directory ~/.local/share/applications/ does not exist. mimeapps.list not installed."
         fi
+    elif [ ${file} == "./prefs.xml" ]
+    then
+      pidgin_conf="${HOME}/.purple/prefs.xml"
+      if [ -e $pidgin_conf ]
+      then
+        backup_file $pidgin_conf
+        ln -s "${current_dir}/.purple/${file##*/}" $pidgin_conf
+        echo "Linked ${pidgin_conf} to ${current_dir}/${file##*/}"
+      fi
     fi
 done
 
