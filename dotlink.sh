@@ -87,7 +87,7 @@ do
                 ln -s "${current_dir}/${file##*/}" $link 
                 echo "Linked ${link} to ${current_dir}/${file##*/}"
             else
-                echo "KDE Konsole installtion not found."
+                echo "KDE Konsole installation not found."
             fi
         fi
     elif [ ${file} == "./yakuakerc" ]
@@ -109,7 +109,6 @@ do
     elif [ ${file} == "./lxqt.conf" ] || [ ${file} == "./session.conf" ];
     then
         lxqt_conf="${lxqt_dir}/${file##*/}"
-        echo $lxqt_conf
         if [ -f $lxqt_conf ]
         then
             backup_file $lxqt_conf
