@@ -111,6 +111,7 @@ set t_Co=256
 
 " Color scheme
 colorscheme molokai
+"colorscheme github
  
 " Use UTF-8
 set encoding=utf-8
