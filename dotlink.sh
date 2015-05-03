@@ -10,7 +10,7 @@
 # Files from the repo that should not be linked:
 dont_link=("./dotlink.sh" "./README.md")
 # Files that are not just linked to a dotfile in $HOME:
-special=("./prefs.xml" "./MyShell.profile" "./yakuakerc" "./mimeapps.list" "./konsolerc" "./color-schemes")
+special=("./prefs.xml" "./MyShell.profile" "./yakuakerc" "./mimeapps.list" "./konsolerc" "./color-schemes" "./lxqt.conf" "./session.conf")
 # Directory for file backups:
 backup_dir="${HOME}/.dotfiles.bck"
 
@@ -54,8 +54,13 @@ then
     kde_dir="${HOME}/.kde4"
 fi
 
-# Iterate over all non-dot-files 
-for file in ./* 
+if [ -d "${HOME}/.config/lxqt" ]
+then
+    lxqt_dir="${HOME}/.config/lxqt"
+fi
+
+# Iterate over all non-dot-files
+for file in ./*
 do
     # Ommit file that should not be linked 
     if [[ ! ${dont_link[*]} =~ ${file} ]] && [[ ! ${special[*]} =~ ${file} ]]
@@ -67,7 +72,7 @@ do
         echo "Linked ${link} to ${current_dir}/${file##*/}"
     # Link special files 
     elif [ ${file} == "./MyShell.profile" ]
-    then    
+    then
         if [ -n "${kde_dir}" ]
         then
             # Check if KDE Konsole is installed 
@@ -100,6 +105,16 @@ do
             else
                 echo "Yakuake installation not found."
             fi
+        fi
+    elif [ ${file} == "./lxqt.conf" ] || [ ${file} == "./session.conf" ];
+    then
+        lxqt_conf="${lxqt_dir}/${file##*/}"
+        echo $lxqt_conf
+        if [ -f $lxqt_conf ]
+        then
+            backup_file $lxqt_conf
+            ln -s "${current_dir}/${file##*/}" $lxqt_conf
+            echo "Linked ${lxqt_conf} to ${current_dir}/${file##*/}"
         fi
     elif [ ${file} == "./mimeapps.list" ]
     then
