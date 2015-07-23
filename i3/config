@@ -46,12 +46,6 @@ bindsym $mod+k focus down
 bindsym $mod+l focus up
 bindsym $mod+odiaeresis focus right
 
-# alternatively, you can use the cursor keys:
-#bindsym $mod+Left focus left
-#bindsym $mod+Down focus down
-#bindsym $mod+Up focus up
-#bindsym $mod+Right focus right
-
 # move focused window
 bindsym $mod+Shift+j move left
 bindsym $mod+Shift+k move down
@@ -61,12 +55,6 @@ bindsym $mod+Shift+odiaeresis move right
 # use arrow keys to move a workspace to a different output (monitor)
 bindsym $mod+Shift+Left move workspace to output left
 bindsym $mod+Shift+Right move workspace to output right
-
-# alternatively, you can use the cursor keys:
-#bindsym $mod+Shift+Left move left
-#bindsym $mod+Shift+Down move down
-#bindsym $mod+Shift+Up move up
-#bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
 bindsym $mod+h split h
@@ -163,7 +151,7 @@ bindsym $mod+r mode "resize"
 #exec setxkbmap de # no wm
 
 # Set wallpaper
-#exec feh --bg-max ~/wallpaper.png
+exec feh --bg-max ~/wallpaper.png
 
 # Keybinding to lock the screen with i3lock
 bindsym $mod+F12 exec i3lock --image=$HOME/wallpaper.png
@@ -186,8 +174,8 @@ for_window [window_role="pop_up"] floating enable
 for_window [class="Oblogout"] floating enable
 
 # Autostart some applications
-exec --no-startup-id i3-msg 'workspace 1; exec doublecmd'
+#exec --no-startup-id i3-msg 'workspace 1; exec doublecmd'
 exec --no-startup-id i3-msg 'workspace 2; exec qterminal'
-exec --no-startup-id i3-msg 'workspace 3; exec firefox'
-exec --no-startup-id i3-msg 'workspace 4; exec qterminal'
-exec --no-startup-id i3-msg 'workspace 4; exec pidgin'
+#exec --no-startup-id i3-msg 'workspace 3; exec firefox'
+#exec --no-startup-id i3-msg 'workspace 4; exec qterminal'
+exec --no-startup-id i3-msg 'workspace 5; exec pidgin'
