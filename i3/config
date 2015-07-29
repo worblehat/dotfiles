@@ -112,7 +112,7 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 #bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'" # no wm
-bindsym $mod+Shift+e exec oblogout
+bindsym $mod+Shift+e exec xfce4-session-logout
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -153,8 +153,8 @@ bindsym $mod+r mode "resize"
 # Set wallpaper
 exec feh --bg-max ~/wallpaper.png
 
-# Keybinding to lock the screen with i3lock
-bindsym $mod+F12 exec i3lock --image=$HOME/wallpaper.png
+# Keybinding to lock the screen
+bindsym $mod+F12 exec xflock4
 
 # Start KDE's polkit agent to be able to authenticate as root if necessary
 #exec --no-startup-id /usr/lib/kde4/libexec/polkit-kde-authentication-agent-1 #no wm
@@ -175,7 +175,7 @@ for_window [class="Oblogout"] floating enable
 
 # Autostart some applications
 #exec --no-startup-id i3-msg 'workspace 1; exec doublecmd'
-exec --no-startup-id i3-msg 'workspace 2; exec qterminal'
+#exec --no-startup-id i3-msg 'workspace 2; exec qterminal'
 #exec --no-startup-id i3-msg 'workspace 3; exec firefox'
 #exec --no-startup-id i3-msg 'workspace 4; exec qterminal'
 exec --no-startup-id i3-msg 'workspace 5; exec pidgin'
