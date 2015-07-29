@@ -10,6 +10,7 @@ alias n='netstat -natp'
 alias p='ps ax'
 alias g='grep'
 alias pg='ps ax | grep'
+alias x='startxfce4'
 
 # Send escape sequence as part of prompt (needed for dynamic window titles in screen)
 PROMPT_COMMAND='echo -ne "\033k\033\0134"'
@@ -55,3 +56,9 @@ if [ -f ~/.git-completion.bash ]; then
    . ~/.git-completion.bash
 fi
 
+# Start xfce automatically if this is tty1
+# (.bashrc must be called by .bash_profile!)
+
+if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
+  startxfce4
+fi
