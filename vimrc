@@ -20,6 +20,7 @@ set smarttab
 
 " Use filetype specific plugins and indentation rules if available
 filetype plugin indent on
+set omnifunc=syntaxcomplete#Complete
 
 " Show white space characters
 set list
