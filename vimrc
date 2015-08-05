@@ -179,6 +179,10 @@ if has("gui_running")
   endif
 endif
 
+" Sometimes vim does not recognize .tex files as latex-files, but as plain
+" text-files. This fixes it:
+let g:tex_flavor = 'latex'
+
 " ======================
 " Plugins Configurations
 " ======================
