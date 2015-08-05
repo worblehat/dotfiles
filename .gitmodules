@@ -7,10 +7,6 @@
 [submodule "vim/bundle/jedi-vim"]
 	path = vim/bundle/jedi-vim
 	url = https://github.com/davidhalter/jedi-vim.git
-[submodule "vim/bundle/vim-project"]
-	path = vim/bundle/project
-	url = https://github.com/shemerey/vim-project.git
-    ignore = untracked
 [submodule "vim/bundle/syntastic"]
 	path = vim/bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git
@@ -20,12 +16,6 @@
 [submodule "vim/bundle/TaskList"]
 	path = vim/bundle/TaskList
 	url = https://github.com/vim-scripts/TaskList.vim.git
-[submodule "vim/bundle/vim-template"]
-	path = vim/bundle/vim-template
-	url = https://github.com/aperezdc/vim-template.git
-[submodule "vim/bundle/LaTeX-Box"]
-	path = vim/bundle/LaTeX-Box
-	url = https://github.com/LaTeX-Box-Team/LaTeX-Box.git
 [submodule "vim/bundle/showmarks"]
 	path = vim/bundle/showmarks
 	url = https://github.com/jacquesbh/vim-showmarks
@@ -35,9 +25,6 @@
 [submodule "vim/bundle/SimpylFold"]
 	path = vim/bundle/SimpylFold
 	url = https://github.com/tmhedberg/SimpylFold.git
-[submodule "vim/bundle/vim-qml"]
-	path = vim/bundle/vim-qml
-	url = https://github.com/peterhoeg/vim-qml.git
 [submodule "vim/bundle/pandoc-syntax"]
 	path = vim/bundle/pandoc-syntax
 	url = https://github.com/vim-pandoc/vim-pandoc-syntax.git
