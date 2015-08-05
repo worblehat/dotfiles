@@ -31,9 +31,6 @@ noremap <leader><space> :set list!<CR>
 " trailing whitespaces
 set listchars=tab:▸\ ,trail:˽
 
-" Use hard tabs in C/C++ code
-autocmd FileType c,cpp setlocal noexpandtab shiftwidth=4 tabstop=4
-
 " tab width in python
 autocmd FileType py setlocal shiftwidth=4 tabstop=4
 
@@ -112,12 +109,13 @@ set t_Co=256
 " Color scheme
 colorscheme molokai
 "colorscheme github
- 
+
 " Use UTF-8
 set encoding=utf-8
 
-" Hide Buffers instead of closing them 
-" => when opening a new buffer the old one can have unsafed changes (has to be forced with ! otherwise)
+" Hide Buffers instead of closing them
+" => when opening a new buffer the old one can have unsafed changes
+" (has to be forced with ! otherwise)
 set hidden
 
 " Don't make any noise
@@ -136,21 +134,21 @@ highlight ColorColumn ctermbg=234
 " Automatic reload .vimrc when it's altered in vim
 autocmd! bufwritepost .vimrc source %
 
-" Time (ms) after an edit the swap file ist written. 
+" Time (ms) after an edit the swap file ist written.
 " Used by Tagbar and showmarks to update highlights/marks
 set updatetime=500
 
 " Ignore case when searchings
 set ignorecase
 
-" Highlight occurences when searching 
+" Highlight occurences when searching
 set hlsearch
 
 " Clear highlight with space
 nnoremap <Space> :nohlsearch<CR>
 
 " Already highlight occurences while typing the search term
-set incsearch 
+set incsearch
 
 " Command line completion (similar to the behaviour in bash)
 set wildmode=longest,list
@@ -158,11 +156,11 @@ set wildmode=longest,list
 " OmniCompletion menu behaviour (might already be the default)
 set completeopt=menuone,longest,preview
 
-" Make choosing an entry from completion menus more pleasant 
+" Make choosing an entry from completion menus more pleasant
 " (using navigation keys and enter)
 inoremap <expr> k       pumvisible() ? "\<C-n>" : "\k"
 inoremap <expr> l       pumvisible() ? "\<C-p>" : "\l" 
-inoremap <expr> <CR>    pumvisible() ? "\<C-y>" : "\<CR>" 
+inoremap <expr> <CR>    pumvisible() ? "\<C-y>" : "\<CR>"
 
 " Sometimes I just want to use the mouse for scrolling
 :set mouse=a
@@ -231,24 +229,14 @@ let g:jedi#show_call_signatures = "<leader>c"
 
 " === clang_complete ===
 " Open menu only on demand
-let g:clang_complete_auto = 0
+"let g:clang_complete_auto = 0
+let g:clang_complete_auto = 1
 " Close the preview window after selection of entry
 let g:clang_close_preview = 1
 " Use libclang (instead of clang)
 let g:clang_use_library = 1
-" Additional include directory for clang's auto-completion 
+" Additional include directory for clang's auto-completion
  let g:clang_user_options = '-I/home/tobias/usr/include'
-" Completion menu (provided by clang_complete) with ctrl+space for C/C++
-autocmd FileType c inoremap <Nul> <c-x><c-u>
-autocmd FileType cpp inoremap <Nul> <c-x><c-u>
-
-" === vim-template ===
-let g:username = "Tobias Marquardt"
-let g:email = "tm@tobix.eu"
-
-" === project ===
-" Toggle project window
-nmap <silent> <leader>3 <Plug>ToggleProject
 
 " === startify ===
 let g:startify_bookmarks = [ '~/.vimrc' ]
@@ -256,13 +244,6 @@ let g:startify_change_to_dir = 0
 
 " === SimpylFold  ===
 let g:SimpylFold_docstring_preview = 1
-
-" === Latex-Box ===
-let g:LatexBox_custom_indent = 0    "TODO does not work?
-" Options related to compiling from within vim using latexmk
-let g:LatexBox_latexmk_preview_continuously = 1
-let g:LatexBox_output_type = "pdf"
-let g:LatexBox_quickfix = 2
 
 " === pandoc-syntax ===
 autocmd BufNewFile,BufRead *.md,*.pd,*.pdc set filetype=pandoc
