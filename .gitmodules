@@ -41,3 +41,6 @@
 [submodule "vim/bundle/pandoc-syntax"]
 	path = vim/bundle/pandoc-syntax
 	url = https://github.com/vim-pandoc/vim-pandoc-syntax.git
+[submodule "vim/bundle/vimtex"]
+	path = vim/bundle/vimtex
+	url = https://github.com/lervag/vimtex.git
