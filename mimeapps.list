@@ -1,12 +1,12 @@
 [Added Associations]
-application/pdf=mupdf.desktop;
+application/pdf=kde4-okular.desktop;mupdf.desktop;
 application/x-kdeuser1=truecrypt.desktop;
 application/x-kdeuser2=truecrypt.desktop;
 application/x-kdeuser3=truecrypt.desktop;
 audio/mpeg=deadbeef.desktop;mplayer.desktop;vlc.desktop;
 audio/x-mpegurl=deadbeef.desktop;
 audio/x-wav=deadbeef.desktop;mplayer.desktop;vlc.desktop;
-image/jpeg=kde4-gwenview.desktop;feh.desktop;mupdf.desktop;gimp.desktop;kde4-okularApplication_kimgio.desktop;wine-extension-jpe.desktop;wine-extension-jfif.desktop;
+image/jpeg=lximage-qt.desktop;kde4-gwenview.desktop;feh.desktop;mupdf.desktop;gimp.desktop;kde4-okularApplication_kimgio.desktop;wine-extension-jpe.desktop;wine-extension-jfif.desktop;
 image/png=lximage-qt.desktop;pinta.desktop;feh.desktop;mupdf.desktop;gimp.desktop;
 image/svg+xml=inkscape.desktop;gimp.desktop;vim.desktop;kate-2.desktop;kde4-kfmclient_html.desktop;kde4-kate.desktop;kde4-kwrite.desktop;libreoffice-writer.desktop;kde4-okularApplication_txt.desktop;firefox.desktop;wine-extension-xml.desktop;wine-extension-txt.desktop;gvim.desktop;wine-extension-ini.desktop;
 text/csv=vim.desktop;libreoffice-calc.desktop;kate-2.desktop;kde4-kate.desktop;kde4-kwrite.desktop;libreoffice-writer.desktop;kde4-okularApplication_txt.desktop;wine-extension-txt.desktop;gvim.desktop;wine-extension-ini.desktop;
@@ -17,3 +17,11 @@ video/x-flv=vlc.desktop;mplayer.desktop;
 video/x-matroska=vlc.desktop;mplayer.desktop;
 video/x-msvideo=vlc.desktop;mplayer.desktop;
 application/octet-stream=truecrypt.desktop;
+application/vnd.oasis.opendocument.text=libreoffice-writer.desktop;
+application/xml=dc_xfce4-clipman_544470646.desktop;
+
+[Default Applications]
+application/pdf=kde4-okular.desktop;
+application/vnd.oasis.opendocument.text=libreoffice-writer.desktop;
+image/jpeg=lximage-qt.desktop;
+application/xml=dc_xfce4-clipman_544470646.desktop;
