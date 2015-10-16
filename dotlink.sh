@@ -10,7 +10,7 @@
 # Files from the repo that should not be linked:
 dont_link=("./dotlink.sh" "./README.md")
 # Files that are not just linked to a dotfile in $HOME:
-special=("./prefs.xml" "./MyShell.profile" "./yakuakerc" "./mimeapps.list" "./konsolerc" "./color-schemes" "./lxqt.conf" "./session.conf")
+special=("./prefs.xml" "./MyShell.profile" "./yakuakerc" "./mimeapps.list" "./konsolerc" "./color-schemes" "./lxqt.conf" "./session.conf" "./qterminal.ini")
 # Directory for file backups:
 backup_dir="${HOME}/.dotfiles.bck"
 
@@ -57,6 +57,11 @@ fi
 if [ -d "${HOME}/.config/lxqt" ]
 then
     lxqt_dir="${HOME}/.config/lxqt"
+fi
+
+if [ -d "${HOME}/.config/qterminal.org" ]
+then
+    qterminal_dir="${HOME}/.config/qterminal.org"
 fi
 
 # Iterate over all non-dot-files
@@ -114,6 +119,15 @@ do
             backup_file $lxqt_conf
             ln -s "${current_dir}/${file##*/}" $lxqt_conf
             echo "Linked ${lxqt_conf} to ${current_dir}/${file##*/}"
+        fi
+    elif [ ${file} == "./qterminal.ini" ];
+    then
+        qterminal_conf="${qterminal_dir}/${file##*/}"
+        if [ -f $qterminal_conf ]
+        then
+            backup_file $qterminal_conf
+            ln -s "${current_dir}/${file##*/}" $qterminal_conf
+            echo "Linked ${qterminal_conf} to ${current_dir}/${file##*/}"
         fi
     elif [ ${file} == "./mimeapps.list" ]
     then
