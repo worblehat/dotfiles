@@ -10,6 +10,7 @@ alias n='netstat -natp'
 alias p='ps ax'
 alias g='grep'
 alias pg='ps ax | grep'
+alias x='startxfce4'
 
 # Send escape sequence as part of prompt (needed for dynamic window titles in screen)
 PROMPT_COMMAND='echo -ne "\033k\033\0134"'
@@ -24,7 +25,10 @@ fi
 
 # Add user specific binaries to PATH
 if [ -d "$HOME/usr/bin" ] ; then
-  PATH="$PATH:$HOME/usr/bin"
+  PATH="$HOME/usr/bin:$PATH"
+fi
+if [ -d "$HOME/.local/bin" ] ; then
+  PATH="$HOME/.local/bin:$PATH"
 fi
 
 # Add Python modules to PYTHONPATH
@@ -47,6 +51,9 @@ done
 if [ -d "$HOME/.gem/ruby/2.1.0/bin" ] ; then
     PATH="$PATH:$HOME/.gem/ruby/2.1.0/bin"
 fi
+if [ -d "$HOME/.gem/ruby/2.2.0/bin" ] ; then
+    PATH="$PATH:$HOME/.gem/ruby/2.2.0/bin"
+fi
 
 # Add binaries installed via cabal to PATH
 if [ -d "$HOME/.cabal/bin" ] ; then
@@ -58,3 +65,9 @@ if [ -f ~/.git-completion.bash ]; then
    . ~/.git-completion.bash
 fi
 
+# Start xfce automatically if this is tty1
+# (.bashrc must be called by .bash_profile!)
+
+if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
+  startxfce4
+fi
