@@ -162,8 +162,8 @@ bindsym $mod+F12 exec xflock4
 # Udiskie for automounting
 #exec --no-startup-id udiskie --tray #no wm
 
-# Use ksnapshot for screenshots
-bindsym Print exec ksnapshot
+# Use spectacle for screenshots
+bindsym Print exec spectacle
 
 # Adjust screen brigthness via special function key
 bindsym XF86MonBrightnessUp exec xbacklight +5
