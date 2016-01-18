@@ -104,6 +104,9 @@ nnoremap <leader>h <C-]>
 " Disable folding at startup
 set nofoldenable
 
+" TODO does not work?
+set breakindent
+
 " Enable use of 256 colors in terminal
 set t_Co=256
 
@@ -129,7 +132,7 @@ set laststatus=2
 set number
 
 " Show wrap line
-set colorcolumn=80
+set colorcolumn=100
 highlight ColorColumn ctermbg=234
 
 " Automatic reload .vimrc when it's altered in vim
@@ -254,6 +257,12 @@ let g:SimpylFold_docstring_preview = 1
 autocmd BufNewFile,BufRead *.md,*.pd,*.pdc set filetype=pandoc
 "autocmd FileType md,pd,pdc set filetype=pandoc
 let g:pandoc_use_conceal = 0
+
+" === vimtex ===
+let g:vimtex_complete_close_braces = 1
+let g:vimtex_fold_enabled = 0
+let g:vimtex_latexmk_continuous = 0
+let g:vimtex_latexmk_background = 1
 
 "=========================
 " Look for .vimrc in the current directory, but disable :autocmd, shell and
