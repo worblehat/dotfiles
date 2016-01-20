@@ -18,6 +18,11 @@ PROMPT_COMMAND='echo -ne "\033k\033\0134"'
 # Screen uses xterm to show 256 colors (see .screenrc). So we set this as default
 TERM=xterm
 
+# Add user local binaries to PATH
+if [ -d "$HOME/.local/bin" ] ; then
+  PATH="$PATH:$HOME/.local/bin"
+fi
+
 # Add user specific binaries to PATH
 if [ -d "$HOME/usr/bin" ] ; then
   PATH="$HOME/usr/bin:$PATH"
@@ -31,6 +36,10 @@ python=("$HOME/usr/lib/python3.4/site-packages"
         "$HOME/usr/lib/python3.3/site-packages"
         "$HOME/usr/lib/python3.2/site-packages"
         "$HOME/usr/lib/python/site-packages"
+        "$HOME/.local/lib/python3.4/site-packages"
+        "$HOME/.local/lib/python3.3/site-packages"
+        "$HOME/.local/lib/python3.2/site-packages"
+        "$HOME/.local/lib/python/site-packages"
        )
 for p in ${python[@]}; do
     if [ -d $p ] ; then

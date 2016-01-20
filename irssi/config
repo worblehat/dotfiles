@@ -20,6 +20,14 @@ servers = (
     autoconnect = "no";
   },
   {
+    address = "irc.barton.de";
+    chatnet = "barton";
+    port = "6667";
+    use_ssl = "no";
+    ssl_verify = "no";
+    autoconnect = "no";
+  },
+  {
     address = "irc.freenode.net";
     chatnet = "freenode";
     port = "6667";
@@ -103,6 +111,7 @@ chatnets = {
   ircnet = { type = "IRC"; nick = "worblehat"; };
   gnome = { type = "IRC"; nick = "worblehat"; };
   oftc = { type = "IRC"; nick = "worblehat"; };
+  barton = { type = "IRC"; nick = "worblehat"; };
   "twice-irc" = { type = "IRC"; nick = "worblehat"; };
 };
 
@@ -133,6 +142,7 @@ channels = (
   { name = "#c"; chatnet = "freenode"; autojoin = "no"; },
   { name = "#android-dev"; chatnet = "freenode"; autojoin = "no"; },
   { name = "#github"; chatnet = "freenode"; autojoin = "no"; },
+  { name = "##tty"; chatnet = "freenode"; autojoin = "no"; },
   { name = "#llvm"; chatnet = "oftc"; autojoin = "no"; },
   { name = "#urwid"; chatnet = "oftc"; autojoin = "no"; },
   { name = "#irssi"; chatnet = "ircnet"; autojoin = "no"; },
