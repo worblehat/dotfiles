@@ -131,9 +131,11 @@ set laststatus=2
 " Show line numbers
 set number
 
-" Show wrap line
+" Show wrap line and define textwidth (for manual wrapping with 'gq')
+set textwidth=100
 set colorcolumn=100
 highlight ColorColumn ctermbg=234
+
 
 " Automatic reload .vimrc when it's altered in vim
 autocmd! bufwritepost .vimrc source %
@@ -185,6 +187,19 @@ endif
 " Sometimes vim does not recognize .tex files as latex-files, but as plain
 " text-files. This fixes it:
 let g:tex_flavor = 'latex'
+
+" Folding of markdown sections
+function MarkdownLevel()
+  let h = matchstr(getline(v:lnum), '^#\+')
+  if empty(h)
+    return "="
+  else
+    "return ">" . len(h)  " multiple folding levels
+    return ">1"           "single folding level
+  endif
+endfunction
+au BufEnter *.md setlocal foldexpr=MarkdownLevel()
+au BufEnter *.md setlocal foldmethod=expr
 
 " ======================
 " Plugins Configurations
@@ -259,6 +274,7 @@ autocmd BufNewFile,BufRead *.md,*.pd,*.pdc set filetype=pandoc
 let g:pandoc_use_conceal = 0
 
 " === vimtex ===
+let g:tex_flavor = 'latex'
 let g:vimtex_complete_close_braces = 1
 let g:vimtex_fold_enabled = 0
 let g:vimtex_latexmk_continuous = 0
