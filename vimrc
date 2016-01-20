@@ -273,12 +273,9 @@ autocmd BufNewFile,BufRead *.md,*.pd,*.pdc set filetype=pandoc
 "autocmd FileType md,pd,pdc set filetype=pandoc
 let g:pandoc_use_conceal = 0
 
-" === vimtex ===
-let g:tex_flavor = 'latex'
-let g:vimtex_complete_close_braces = 1
-let g:vimtex_fold_enabled = 0
-let g:vimtex_latexmk_continuous = 0
-let g:vimtex_latexmk_background = 1
+" === Latex-Box ===
+g:LatexBox_complete_inlineMath = 1
+"TODO
 
 "=========================
 " Look for .vimrc in the current directory, but disable :autocmd, shell and
