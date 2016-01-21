@@ -259,7 +259,7 @@ let g:clang_close_preview = 1
 " Use libclang (instead of clang)
 let g:clang_use_library = 1
 " Additional include directory for clang's auto-completion
- let g:clang_user_options = '-I/home/tobias/usr/include'
+let g:clang_user_options = '-I/home/tobias/usr/include'
 
 " === startify ===
 let g:startify_bookmarks = [ '~/.vimrc' ]
@@ -274,7 +274,7 @@ autocmd BufNewFile,BufRead *.md,*.pd,*.pdc set filetype=pandoc
 let g:pandoc_use_conceal = 0
 
 " === Latex-Box ===
-g:LatexBox_complete_inlineMath = 1
+let g:LatexBox_complete_inlineMath = 1
 "TODO
 
 "=========================
