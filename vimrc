@@ -275,6 +275,8 @@ let g:pandoc_use_conceal = 0
 
 " === Latex-Box ===
 let g:LatexBox_complete_inlineMath = 1
+let g:LatexBox_Folding = 1
+let g:LatexBox_fold_envs = 0
 "TODO
 
 "=========================
