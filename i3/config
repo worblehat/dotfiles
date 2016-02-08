@@ -179,3 +179,6 @@ for_window [class="Oblogout"] floating enable
 #exec --no-startup-id i3-msg 'workspace 3; exec firefox'
 #exec --no-startup-id i3-msg 'workspace 4; exec qterminal'
 exec --no-startup-id i3-msg 'workspace 5; exec pidgin'
+
+# Restart xfce panel
+bindsym $mod+F11 exec xfce4-panel -r
