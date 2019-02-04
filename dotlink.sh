@@ -6,7 +6,7 @@
 # Files from the repo that should not be linked:
 dont_link=("./dotlink.sh" "./README.md" "./TODO.md")
 # Files that are not just linked to a dotfile in $HOME:
-special=()
+special=("./asunder")
 # Directory for file backups:
 backup_dir="${HOME}/.dotfiles.bck"
 
@@ -53,9 +53,14 @@ do
         ln -s "${current_dir}/${file##*/}" $link 
         echo "Linked ${link} to ${current_dir}/${file##*/}"
     # Link special files 
-    #elif [ ${file} == "./MyShell.profile" ]
-    #then
-    #
+    elif [ ${file} == "./asunder" ]
+    then
+        asunder_dir="${HOME}/.config/asunder"
+        mkdir -p ${asunder_dir}
+        link="${asunder_dir}/asunder"
+        backup_file $link
+        ln -s "${current_dir}/${file##*/}" $link
+        echo "Linked ${link} to ${current_dir}/${file##*/}"
     fi
 done
 
