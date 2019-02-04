@@ -1,33 +1,9 @@
 [submodule "vim/bundle/bufkill"]
 	path = vim/bundle/bufkill
 	url = https://github.com/cometsong/bufkill.vim.git
-[submodule "vim/bundle/clang_complete"]
-	path = vim/bundle/clang_complete
-	url = https://github.com/Rip-Rip/clang_complete.git
-[submodule "vim/bundle/jedi-vim"]
-	path = vim/bundle/jedi-vim
-	url = https://github.com/davidhalter/jedi-vim.git
-[submodule "vim/bundle/syntastic"]
-	path = vim/bundle/syntastic
-	url = https://github.com/scrooloose/syntastic.git
-[submodule "vim/bundle/tagbar"]
-	path = vim/bundle/tagbar
-	url = https://github.com/majutsushi/tagbar.git
-[submodule "vim/bundle/TaskList"]
-	path = vim/bundle/TaskList
-	url = https://github.com/vim-scripts/TaskList.vim.git
 [submodule "vim/bundle/showmarks"]
 	path = vim/bundle/showmarks
 	url = https://github.com/jacquesbh/vim-showmarks
 [submodule "vim/bundle/startify"]
 	path = vim/bundle/startify
 	url = https://github.com/mhinz/vim-startify.git
-[submodule "vim/bundle/SimpylFold"]
-	path = vim/bundle/SimpylFold
-	url = https://github.com/tmhedberg/SimpylFold.git
-[submodule "vim/bundle/pandoc-syntax"]
-	path = vim/bundle/pandoc-syntax
-	url = https://github.com/vim-pandoc/vim-pandoc-syntax.git
-[submodule "vim/bundle/latex-box"]
-	path = vim/bundle/latex-box
-	url = https://github.com/LaTeX-Box-Team/LaTeX-Box.git

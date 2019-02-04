@@ -2,15 +2,11 @@
 # This script symlinks the files and folders in the current directory to the $HOME of the user appending a
 # dot in front of the name. Files that already have a preceding dot will be ignored. 
 # If the target already exists it is backuped to $HOME/.dotfiles.bck/ before overwriting it.
-# In addition configuration from some kde programs are linked if the correpsonding programs are installed
-# (see 'special' files).
-# NOTE: This script must be in the current directoy when run!
-# TODO link konsolerc
 
 # Files from the repo that should not be linked:
-dont_link=("./dotlink.sh" "./README.md")
+dont_link=("./dotlink.sh" "./README.md" "./TODO.md")
 # Files that are not just linked to a dotfile in $HOME:
-special=("./prefs.xml" "./MyShell.profile" "./yakuakerc" "./mimeapps.list" "./konsolerc" "./color-schemes" "./lxqt.conf" "./session.conf" "./qterminal.ini")
+special=()
 # Directory for file backups:
 backup_dir="${HOME}/.dotfiles.bck"
 
@@ -45,25 +41,6 @@ then
     done
 fi
 
-# What's the kde directory (if installed)?
-if [ -d "${HOME}/.kde" ]
-then
-    kde_dir="${HOME}/.kde"
-elif [ -d "${HOME}/.kde4" ]
-then
-    kde_dir="${HOME}/.kde4"
-fi
-
-if [ -d "${HOME}/.config/lxqt" ]
-then
-    lxqt_dir="${HOME}/.config/lxqt"
-fi
-
-if [ -d "${HOME}/.config/qterminal.org" ]
-then
-    qterminal_dir="${HOME}/.config/qterminal.org"
-fi
-
 # Iterate over all non-dot-files
 for file in ./*
 do
@@ -76,81 +53,9 @@ do
         ln -s "${current_dir}/${file##*/}" $link 
         echo "Linked ${link} to ${current_dir}/${file##*/}"
     # Link special files 
-    elif [ ${file} == "./MyShell.profile" ]
-    then
-        if [ -n "${kde_dir}" ]
-        then
-            # Check if KDE Konsole is installed 
-            konsole_dir="${kde_dir}/share/apps/konsole/"
-            #TODO nicht mehr aktuell
-            # Konsole-Ordner für profile jetzt unter .local/share/konsole
-            if [ -d $konsole_dir ]
-            then
-                # Link the profile file in the konsole's directory
-                link="${konsole_dir}MyShell.profile" 
-                backup_file $link
-                ln -s "${current_dir}/${file##*/}" $link 
-                echo "Linked ${link} to ${current_dir}/${file##*/}"
-            else
-                echo "KDE Konsole installation not found."
-            fi
-        fi
-    elif [ ${file} == "./yakuakerc" ]
-    then
-        if [ -n "${kde_dir}" ]
-        then
-            # Check if yakuake is installed
-            yakuake_conf="${kde_dir}/share/config/yakuakerc"
-            if [ -f $yakuake_conf ]
-            then
-                # Link the yakuakerc file
-                backup_file $yakuake_conf
-                ln -s "${current_dir}/${file##*/}" $yakuake_conf
-                echo "Linked ${yakuake_conf} to ${current_dir}/${file##*/}"
-            else
-                echo "Yakuake installation not found."
-            fi
-        fi
-    elif [ ${file} == "./lxqt.conf" ] || [ ${file} == "./session.conf" ];
-    then
-        lxqt_conf="${lxqt_dir}/${file##*/}"
-        if [ -f $lxqt_conf ]
-        then
-            backup_file $lxqt_conf
-            ln -s "${current_dir}/${file##*/}" $lxqt_conf
-            echo "Linked ${lxqt_conf} to ${current_dir}/${file##*/}"
-        fi
-    elif [ ${file} == "./qterminal.ini" ];
-    then
-        qterminal_conf="${qterminal_dir}/${file##*/}"
-        if [ -f $qterminal_conf ]
-        then
-            backup_file $qterminal_conf
-            ln -s "${current_dir}/${file##*/}" $qterminal_conf
-            echo "Linked ${qterminal_conf} to ${current_dir}/${file##*/}"
-        fi
-    elif [ ${file} == "./mimeapps.list" ]
-    then
-        local_app_dir="${HOME}/.local/share/applications/"
-        if [ -d $local_app_dir ]
-        then
-            # Link the mimeapps.list file
-            link="${local_app_dir}${file##*/}"
-            backup_file $link
-            ln -s "${current_dir}/${file##*/}" $link
-            echo "Linked ${link} to ${current_dir}/${file##*/}"
-        else
-            echo "Directory ~/.local/share/applications/ does not exist. mimeapps.list not installed."
-        fi
-    elif [ ${file} == "./prefs.xml" ]
-    then
-      pidgin_conf="${HOME}/.purple/prefs.xml"
-      if [ -e $pidgin_conf ]
-      then
-        backup_file $pidgin_conf
-        ln -s "${current_dir}/.purple/${file##*/}" $pidgin_conf
-        echo "Linked ${pidgin_conf} to ${current_dir}/${file##*/}"
-      fi
+    #elif [ ${file} == "./MyShell.profile" ]
+    #then
+    #
     fi
 done
 
