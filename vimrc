@@ -65,6 +65,9 @@ inoremap <c-@> <c-x><c-o>
 nnoremap <c-s>	:w<CR> 
 inoremap <c-s>  <ESC>:w<CR>a
 
+" Use system clipboard instead of unnamed register for yank/paste
+set clipboard=unnamed
+
 " Easier buffer switching
 nnoremap <leader>b  :buffers<CR>:buffer<Space>
 
