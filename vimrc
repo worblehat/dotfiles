@@ -23,14 +23,14 @@ set smarttab
 filetype plugin indent on
 
 " Show white space characters
-set list
+"set list
 
 " Toggle displaying of white space characters
 noremap <leader><space> :set list!<CR>
 
 " on "set list", show tabs (as an arrow followed by proper whitespaces) and
 " trailing whitespaces
-"set listchars=tab:▸\ ,trail:˽,eol:
+set listchars=tab:▸\ ,trail:˽,eol:$
 
 " tab width in python
 autocmd FileType py setlocal shiftwidth=4 tabstop=4
@@ -153,14 +153,20 @@ inoremap <expr> <CR>    pumvisible() ? "\<C-y>" : "\<CR>"
 :map <MouseDown> 5<c-y>
 :map <MouseUp> 5<c-e>
 
-" Use the clipboard register '*' instead of the unnamed register for alls yanks, puts etc.
-set clipboard=unnamed
+" Use the system clipboard registers instead of the unnamed register for alls yanks, puts etc.
+if has("win32")
+  set clipboard=unnamed "register: *
+endif
+if has("unix")
+  set clipboard=unnamedplus "register: +
+endif
+
 
 " Windows specific setup
 if has("gui_running")
+  set guioptions-=T  "remove toolbar
   if has("gui_win32")
     set guifont=Consolas
-    set guioptions-=T  "remove toolbar
     autocmd! bufwritepost _vimrc source %
   endif
 endif
