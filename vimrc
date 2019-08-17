@@ -1,4 +1,5 @@
 set nocompatible
+set backspace=indent,eol,start
 
 " Set up pathogen plugin
 filetype off
@@ -29,7 +30,7 @@ noremap <leader><space> :set list!<CR>
 
 " on "set list", show tabs (as an arrow followed by proper whitespaces) and
 " trailing whitespaces
-set listchars=tab:▸\ ,trail:˽
+"set listchars=tab:▸\ ,trail:˽,eol:
 
 " tab width in python
 autocmd FileType py setlocal shiftwidth=4 tabstop=4
@@ -65,11 +66,8 @@ inoremap <c-@> <c-x><c-o>
 nnoremap <c-s>	:w<CR> 
 inoremap <c-s>  <ESC>:w<CR>a
 
-" Use system clipboard instead of unnamed register for yank/paste
-set clipboard=unnamed
-
-" Easier buffer switching
-nnoremap <leader>b  :buffers<CR>:buffer<Space>
+" Easier buffer switching TODO Replaced by buffergator plugin
+" nnoremap <leader>b  :buffers<CR>:buffer<Space>
 
 " Quickly jump to alternate file by double leader
 nnoremap <leader><leader> <c-^>
@@ -95,7 +93,7 @@ set nofoldenable
 set t_Co=256
 
 " Color scheme
-colorscheme molokai
+colorscheme open-color
 
 " Use UTF-8
 set encoding=utf-8
@@ -107,6 +105,7 @@ set hidden
 
 " Don't make any noise
 set noerrorbells
+set vb t_vb=
 
 " Alway show file/buffer name in status bar
 set laststatus=2
@@ -117,7 +116,6 @@ set number
 " Show wrap line and define textwidth (for manual wrapping with 'gq')
 set textwidth=100
 set colorcolumn=100
-highlight ColorColumn ctermbg=234
 
 " Automatic reload .vimrc when it's altered in vim
 autocmd! bufwritepost .vimrc source %
@@ -155,10 +153,15 @@ inoremap <expr> <CR>    pumvisible() ? "\<C-y>" : "\<CR>"
 :map <MouseDown> 5<c-y>
 :map <MouseUp> 5<c-e>
 
+" Use the clipboard register '*' instead of the unnamed register for alls yanks, puts etc.
+set clipboard=unnamed
+
 " Windows specific setup
 if has("gui_running")
   if has("gui_win32")
     set guifont=Consolas
+    set guioptions-=T  "remove toolbar
+    autocmd! bufwritepost _vimrc source %
   endif
 endif
 
@@ -171,9 +174,14 @@ endif
 " Show marks in all buffers
 autocmd VimEnter * DoShowMarks!
 
+" === buffergator ===
+let g:buffergator_autoupdate = 1
+let g:buffergator_autodismiss_on_select = 0
+let g:buffergator_sort_regime = 'basename'
+
 " === startify ===
 let g:startify_bookmarks = [ '~/.vimrc' ]
-let g:startify_change_to_dir = 0
+let g:startify_change_to_dir = 1
 
 
 " Look for .vimrc in the current directory, but disable :autocmd, shell and

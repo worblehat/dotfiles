@@ -7,3 +7,6 @@
 [submodule "vim/bundle/startify"]
 	path = vim/bundle/startify
 	url = https://github.com/mhinz/vim-startify.git
+[submodule "vim/bundle/buffergator"]
+	path = vim/bundle/buffergator
+	url = https://github.com/jeetsukumaran/vim-buffergator.git
