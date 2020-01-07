@@ -11,7 +11,6 @@ syntax on
 
 " Remap leader key (used for custom mappings in normal mode)
 let mapleader=","
-let maplocalleader="\\"
 
 " Convert tabs to 2 spaces
 set expandtab
@@ -22,18 +21,12 @@ set smarttab
 " Use filetype specific plugins and indentation rules if available
 filetype plugin indent on
 
-" Show white space characters
-"set list
-
 " Toggle displaying of white space characters
 noremap <leader><space> :set list!<CR>
 
 " on "set list", show tabs (as an arrow followed by proper whitespaces) and
 " trailing whitespaces
 set listchars=tab:▸\ ,trail:˽,eol:$
-
-" tab width in python
-autocmd FileType py setlocal shiftwidth=4 tabstop=4
 
 " Navigation on jklö (for german qwertz keyboard layout!)
 noremap ö l
@@ -47,16 +40,6 @@ noremap <c-w>l <c-w>k
 noremap <c-w>k <c-w>j
 noremap <c-w>j <c-w>h
 
-" Disable arrow keys in normal and insert mode (to avoid temptation to use them)
-inoremap  <Up>     <NOP>
-inoremap  <Down>   <NOP>
-inoremap  <Left>   <NOP>
-inoremap  <Right>  <NOP>
-noremap   <Up>     <NOP>
-noremap   <Down>   <NOP>
-noremap   <Left>   <NOP>
-noremap   <Right>  <NOP>
-
 " Map <c-space> to trigger omnicompletion. Some terminals interpret <c-space> as
 " <c-@> (which is a build in vim mapping), so we need to map it as well.
 inoremap <c-space> <c-x><c-o>
@@ -66,9 +49,6 @@ inoremap <c-@> <c-x><c-o>
 nnoremap <c-s>	:w<CR> 
 inoremap <c-s>  <ESC>:w<CR>a
 
-" Easier buffer switching TODO Replaced by buffergator plugin
-" nnoremap <leader>b  :buffers<CR>:buffer<Space>
-
 " Quickly jump to alternate file by double leader
 nnoremap <leader><leader> <c-^>
 
@@ -76,8 +56,8 @@ nnoremap <leader><leader> <c-^>
 nnoremap <leader>1 :help<CR>
 
 " Fast scrolling with ctrl and navigation keys
-nnoremap <c-k>  <c-f>
-nnoremap <c-l>  <c-b>
+nnoremap <c-k>  <c-d>
+nnoremap <c-l>  <c-u>
 
 " Toggle line numbers and fold column for easy copying:
 nmap <leader>7 :set nonumber!<CR>:set foldcolumn=0<CR>
@@ -158,7 +138,11 @@ if has("win32")
   set clipboard=unnamed "register: *
 endif
 if has("unix")
-  set clipboard=unnamedplus "register: +
+  if has("macunix")
+    set clipboard=unnamed
+  else
+    set clipboard=unnamedplus "register: +
+  endif
 endif
 
 
@@ -171,6 +155,11 @@ if has("gui_running")
   endif
 endif
 
+" Mac specific setup
+if has("macunix")
+  " TODO:
+  noremap <D-+> ~
+endif
 
 " ======================
 " Plugins Configurations
