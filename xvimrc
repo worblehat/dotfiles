@@ -3,33 +3,12 @@ set backspace=indent,eol,start
 
 " Remap leader key (used for custom mappings in normal mode)
 let mapleader=","
-let maplocalleader="\\"
 
 " Navigation on jklö (for german qwertz keyboard layout!)
 noremap ö l
 noremap l k
 noremap k j
 noremap j h
-
-" Adapt the customized navigation to window navigation, too
-noremap <c-w>ö <c-w>l
-noremap <c-w>l <c-w>k
-noremap <c-w>k <c-w>j
-noremap <c-w>j <c-w>h
-
-" Disable arrow keys in normal and insert mode (to avoid temptation to use them)
-inoremap  <Up>     <NOP>
-inoremap  <Down>   <NOP>
-inoremap  <Left>   <NOP>
-inoremap  <Right>  <NOP>
-noremap   <Up>     <NOP>
-noremap   <Down>   <NOP>
-noremap   <Left>   <NOP>
-noremap   <Right>  <NOP>
-
-" Fast scrolling with ctrl and navigation keys
-nnoremap <c-k>  <c-f>
-nnoremap <c-l>  <c-b>
 
 " Use UTF-8
 set encoding=utf-8
@@ -46,3 +25,4 @@ nnoremap <Space> :nohlsearch<CR>
 " Already highlight occurences while typing the search term
 set incsearch
 
+set clipboard=unnamed
