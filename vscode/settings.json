@@ -3,5 +3,6 @@
     "vim.leader": ",",
     "vim.vimrc.enable": true,
     "vim.useSystemClipboard": true,
-    "terminal.integrated.shell.osx": "/bin/zsh"
+    "terminal.integrated.shell.osx": "/bin/zsh",
+    "C_Cpp.default.cppStandard": "c++17"
 }
