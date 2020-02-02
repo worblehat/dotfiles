@@ -1,27 +1,14 @@
 [user]
 	name = Tobias Marquardt
-	email = tm@tobix.eu
+	email = t.marquardt@mailbox.org
 [core]
 	editor = vim
 [merge]
 	tool = vimdiff
 [push]
-    #default = simple #requires at least git 1.8
     default = upstream 
 [color]
 	branch = auto
 	diff = auto
 	interactive = auto
 	status = auto
-[alias]
-    cm = commit -m
-    cma = commit --amend
-    co = checkout
-    df = diff
-    dfs = diff --staged
-    ft = fetch
-    k = !gitk --all
-    ps = push
-    rb = rebase
-    sh = stash
-    st = status
