@@ -55,10 +55,6 @@ nnoremap <leader><leader> <c-^>
 " Help shortcut (in addition to F1)
 nnoremap <leader>1 :help<CR>
 
-" Fast scrolling with ctrl and navigation keys
-nnoremap <c-k>  <c-d>
-nnoremap <c-l>  <c-u>
-
 " Toggle line numbers and fold column for easy copying:
 nmap <leader>7 :set nonumber!<CR>:set foldcolumn=0<CR>
 
@@ -157,8 +153,9 @@ endif
 
 " Mac specific setup
 if has("macunix")
-  " TODO:
-  noremap <D-+> ~
+  " '~' (triggered by opt+n) is a dead key on the Mac keyboard. So its not really usable in normal
+  " mode. Therefore I map cmd+i to '~' to emulate the way to type '~' on a normal german keyboard.
+  noremap <D-i> ~
 endif
 
 " ======================
