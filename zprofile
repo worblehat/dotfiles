@@ -1,4 +1,6 @@
- 
+
+export PATH="/Users/tmarquardt/Bin:$PATH"
+
 #export PATH="/Users/tmarquardt/Homebrew/bin:$PATH"
 
 # MacPorts Installer addition on 2020-01-06_at_09:28:51: adding an appropriate PATH variable for use with MacPorts.
