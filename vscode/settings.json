@@ -12,5 +12,5 @@
         { "before": ["k"], "after": ["j"] },
         { "before": ["l"], "after": ["k"] },
         { "before": ["ö"], "after": ["l"] },
-    ]
+    ],
 }
