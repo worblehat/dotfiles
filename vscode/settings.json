@@ -13,4 +13,7 @@
         { "before": ["l"], "after": ["k"] },
         { "before": ["ö"], "after": ["l"] },
     ],
+    "editor.smoothScrolling": true,
+    "editor.mouseWheelScrollSensitivity": 0.3,
+    "bookmarks.navigateThroughAllFiles": true,
 }
