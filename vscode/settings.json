@@ -13,7 +13,15 @@
         { "before": ["l"], "after": ["k"] },
         { "before": ["ö"], "after": ["l"] },
     ],
+    "vim.visualModeKeyBindingsNonRecursive": [
+        { "before": ["j"], "after": ["h"] },
+        { "before": ["k"], "after": ["j"] },
+        { "before": ["l"], "after": ["k"] },
+        { "before": ["ö"], "after": ["l"] },
+    ],
     "editor.smoothScrolling": true,
     "editor.mouseWheelScrollSensitivity": 0.3,
     "bookmarks.navigateThroughAllFiles": true,
+    "cmake.configureOnOpen": true,
+    "window.zoomLevel": 0,
 }
