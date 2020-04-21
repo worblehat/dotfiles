@@ -1,5 +1,5 @@
 
-export PATH="/Users/tmarquardt/Bin:$PATH"
+#export PATH="/Users/tmarquardt/Bin:$PATH"
 
 #export PATH="/Users/tmarquardt/Homebrew/bin:$PATH"
 

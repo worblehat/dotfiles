@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/tmarquardt/.oh-my-zsh"
+export ZSH="/home/tobias/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -72,7 +72,7 @@ plugins=(
   docker
   git
   gitfast # Added because default zsh git-completion does not yet support git restore/switch
-  macports)
+)
 
 source $ZSH/oh-my-zsh.sh
 
