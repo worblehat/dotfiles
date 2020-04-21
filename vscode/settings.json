@@ -1,5 +1,5 @@
 {
-    "workbench.colorTheme": "Quiet Light",
+    "workbench.colorTheme": "Solarized Light",
     "terminal.integrated.shell.osx": "/bin/zsh",
     "C_Cpp.default.cppStandard": "c++17",
     "vim.leader": ",",
@@ -24,4 +24,5 @@
     "bookmarks.navigateThroughAllFiles": true,
     "cmake.configureOnOpen": true,
     "window.zoomLevel": 0,
+    "extensions.ignoreRecommendations": false,
 }

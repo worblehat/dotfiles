@@ -65,11 +65,10 @@ nnoremap <leader>h <C-]>
 " Disable folding at startup
 set nofoldenable
 
-" Enable use of 256 colors in terminal
-set t_Co=256
-
 " Color scheme
-colorscheme open-color
+let g:solarized_termcolors=16
+set background=light
+colorscheme solarized
 
 " Use UTF-8
 set encoding=utf-8
