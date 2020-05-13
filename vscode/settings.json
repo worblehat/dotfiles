@@ -8,16 +8,72 @@
     "vim.smartcase": false,
     "vim.textwidth": 100,
     "vim.normalModeKeyBindingsNonRecursive": [
-        { "before": ["j"], "after": ["h"] },
-        { "before": ["k"], "after": ["j"] },
-        { "before": ["l"], "after": ["k"] },
-        { "before": ["ö"], "after": ["l"] },
+        {
+            "before": [
+                "j"
+            ],
+            "after": [
+                "h"
+            ]
+        },
+        {
+            "before": [
+                "k"
+            ],
+            "after": [
+                "j"
+            ]
+        },
+        {
+            "before": [
+                "l"
+            ],
+            "after": [
+                "k"
+            ]
+        },
+        {
+            "before": [
+                "ö"
+            ],
+            "after": [
+                "l"
+            ]
+        },
     ],
     "vim.visualModeKeyBindingsNonRecursive": [
-        { "before": ["j"], "after": ["h"] },
-        { "before": ["k"], "after": ["j"] },
-        { "before": ["l"], "after": ["k"] },
-        { "before": ["ö"], "after": ["l"] },
+        {
+            "before": [
+                "j"
+            ],
+            "after": [
+                "h"
+            ]
+        },
+        {
+            "before": [
+                "k"
+            ],
+            "after": [
+                "j"
+            ]
+        },
+        {
+            "before": [
+                "l"
+            ],
+            "after": [
+                "k"
+            ]
+        },
+        {
+            "before": [
+                "ö"
+            ],
+            "after": [
+                "l"
+            ]
+        },
     ],
     "editor.smoothScrolling": true,
     "editor.mouseWheelScrollSensitivity": 0.3,
@@ -25,4 +81,5 @@
     "cmake.configureOnOpen": true,
     "window.zoomLevel": 0,
     "extensions.ignoreRecommendations": false,
+    "editor.formatOnSave": true,
 }
