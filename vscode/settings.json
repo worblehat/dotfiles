@@ -82,4 +82,9 @@
     "window.zoomLevel": 0,
     "extensions.ignoreRecommendations": false,
     "editor.formatOnSave": true,
+    "terminal.integrated.scrollback": 10000,
+    "C_Cpp.updateChannel": "Insiders",
+    "git.ignoreMissingGitWarning": true,
+    "editor.renderWhitespace": "trailing",
+    "editor.wordWrapColumn": 100,
 }
