@@ -87,4 +87,5 @@
     "git.ignoreMissingGitWarning": true,
     "editor.renderWhitespace": "trailing",
     "editor.wordWrapColumn": 100,
+    "html.format.enable": false,
 }
