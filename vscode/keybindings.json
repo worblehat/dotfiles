@@ -29,5 +29,14 @@
         "key": "alt+cmd+l",
         "command": "-bookmarks.jumpToNext",
         "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "workbench.action.terminal.clear"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "-extension.vim_ctrl+k",
+        "when": "editorTextFocus && vim.active && vim.use<C-k> && !inDebugRepl"
     }
 ]
