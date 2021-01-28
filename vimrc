@@ -128,7 +128,7 @@ inoremap <expr> <CR>    pumvisible() ? "\<C-y>" : "\<CR>"
 :map <MouseDown> 5<c-y>
 :map <MouseUp> 5<c-e>
 
-" Use the system clipboard registers instead of the unnamed register for alls yanks, puts etc.
+" Use the system clipboard registers instead of the unnamed register for all yanks, puts etc.
 if has("win32")
   set clipboard=unnamed "register: *
 endif
@@ -140,11 +140,12 @@ if has("unix")
   endif
 endif
 
-
-" Windows specific setup
+" GVIM setup
 if has("gui_running")
   set guioptions-=T  "remove toolbar
-  if has("gui_win32")
+  if has("unix")
+    set guifont=Monospace\ 12
+  elseif has("gui_win32")
     set guifont=Consolas
     autocmd! bufwritepost _vimrc source %
   endif

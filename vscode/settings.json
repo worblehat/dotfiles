@@ -88,4 +88,7 @@
     "editor.renderWhitespace": "trailing",
     "editor.wordWrapColumn": 100,
     "html.format.enable": false,
+    "go.buildOnSave": "off",
+    "go.formatTool": "gofmt",
+    "workbench.editorAssociations": [],
 }
