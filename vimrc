@@ -170,6 +170,7 @@ autocmd VimEnter * DoShowMarks!
 let g:buffergator_autoupdate = 1
 let g:buffergator_autodismiss_on_select = 0
 let g:buffergator_sort_regime = 'basename'
+let g:buffergator_vsplit_size = 25
 
 " === startify ===
 let g:startify_bookmarks = [ '~/.vimrc' ]
