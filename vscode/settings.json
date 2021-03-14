@@ -79,7 +79,6 @@
     "editor.mouseWheelScrollSensitivity": 0.3,
     "bookmarks.navigateThroughAllFiles": true,
     "cmake.configureOnOpen": true,
-    "window.zoomLevel": 0,
     "extensions.ignoreRecommendations": false,
     "editor.formatOnSave": true,
     "terminal.integrated.scrollback": 10000,
@@ -91,4 +90,6 @@
     "go.buildOnSave": "off",
     "go.formatTool": "gofmt",
     "workbench.editorAssociations": [],
+    "go.goroot": "/home/tmarquardt/go/go1.13.5/sdk/go",
+    "go.gopath": "/home/tmarquardt/go/go1.13.5/workspace",
 }
