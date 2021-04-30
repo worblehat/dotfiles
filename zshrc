@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=$PATH:/home/tmarquardt/go/go1.13.5/sdk/go/bin
+export PATH=$PATH:/home/tmarquardt/go/go1.13.5/sdk/go/bin:/home/tmarquardt/go/go1.13.5/workspace/bin
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/tmarquardt/.oh-my-zsh"
