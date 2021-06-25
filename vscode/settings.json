@@ -1,6 +1,5 @@
 {
     "workbench.colorTheme": "Solarized Light",
-    "terminal.integrated.shell.osx": "/bin/zsh",
     "C_Cpp.default.cppStandard": "c++17",
     "vim.leader": ",",
     "vim.useSystemClipboard": true,
@@ -89,6 +88,10 @@
     "html.format.enable": false,
     "go.buildOnSave": "off",
     "workbench.editorAssociations": [],
-    "go.goroot": "/home/tmarquardt/go/go1.13.5/sdk/go",
-    "go.gopath": "/home/tmarquardt/go/go1.13.5/workspace",
+    "editor.cursorStyle": "line",
+    "editor.insertSpaces": false,
+    "editor.lineNumbers": "on",
+    "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
+    "editor.wordWrap": "off",
+    "update.mode": "none",
 }

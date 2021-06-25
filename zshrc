@@ -1,8 +1,8 @@
 # If you come from bash you might have to change your $PATH.
 GO_VERSION=1.13.5
 export PATH=/home/tmarquardt/go/go$GO_VERSION/sdk/go/bin:/home/tmarquardt/go/go$GO_VERSION/workspace/bin:$PATH
-export GOROOT=/home/tmarquardt/go/go$GO_VERSION/sdk/go
-export GOPATH=/home/tmarquardt/go/go$GO_VERSION/workspace
+#export GOROOT=/home/tmarquardt/go/go$GO_VERSION/sdk/go
+#export GOPATH=/home/tmarquardt/go/go$GO_VERSION/workspace
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/tmarquardt/.oh-my-zsh"
