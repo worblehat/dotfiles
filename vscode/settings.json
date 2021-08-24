@@ -94,4 +94,5 @@
     "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
     "editor.wordWrap": "off",
     "update.mode": "none",
+    "security.workspace.trust.untrustedFiles": "open",
 }
