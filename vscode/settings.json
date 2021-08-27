@@ -87,7 +87,6 @@
     "editor.wordWrapColumn": 100,
     "html.format.enable": false,
     "go.buildOnSave": "off",
-    "workbench.editorAssociations": [],
     "editor.cursorStyle": "line",
     "editor.insertSpaces": false,
     "editor.lineNumbers": "on",
