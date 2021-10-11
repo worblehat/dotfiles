@@ -79,7 +79,6 @@
     "bookmarks.navigateThroughAllFiles": true,
     "cmake.configureOnOpen": true,
     "extensions.ignoreRecommendations": false,
-    "editor.formatOnSave": true,
     "terminal.integrated.scrollback": 10000,
     "C_Cpp.updateChannel": "Insiders",
     "git.ignoreMissingGitWarning": true,
