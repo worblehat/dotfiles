@@ -84,7 +84,6 @@
     "editor.wordWrapColumn": 100,
     "go.buildOnSave": "off",
     "editor.cursorStyle": "line",
-    "editor.insertSpaces": false,
     "editor.lineNumbers": "on",
     "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
     "editor.wordWrap": "off",
