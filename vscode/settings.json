@@ -93,4 +93,7 @@
     "go.languageServerExperimentalFeatures": {
         "diagnostics": false
     },
+    "shellcheck.exclude": [
+        "3043"
+    ],
 }
