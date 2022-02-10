@@ -96,4 +96,6 @@
     "shellcheck.exclude": [
         "3043"
     ],
+    "python.linting.flake8Enabled": true,
+    "explorer.confirmDelete": false,
 }
