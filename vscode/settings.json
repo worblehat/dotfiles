@@ -98,4 +98,7 @@
     ],
     "python.linting.flake8Enabled": true,
     "explorer.confirmDelete": false,
+    "workbench.editorAssociations": {
+        "*.bin": "hexEditor.hexedit"
+    },
 }
