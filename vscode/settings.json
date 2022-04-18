@@ -89,7 +89,6 @@
     "editor.wordWrap": "off",
     "security.workspace.trust.untrustedFiles": "open",
     "go.formatTool": "goimports",
-    "go.toolsManagement.autoUpdate": true,
     "go.languageServerExperimentalFeatures": {
         "diagnostics": false
     },
