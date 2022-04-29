@@ -4,7 +4,10 @@ export PATH=/home/tmarquardt/go/go$GO_VERSION/sdk/go/bin:/home/tmarquardt/go/go$
 export GOROOT=/home/tmarquardt/go/go$GO_VERSION/sdk/go
 export GOPATH=/home/tmarquardt/go/go$GO_VERSION/workspace
 
-export PATH=$(python3 -m site --user-base)/bin:$PATH
+#export PATH=$(python3 -m site --user-base)/bin:$PATH
+
+# Blinking cursor (not configurable in UI of QTerminal)
+echo -e -n "\e[0 q"
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/tmarquardt/.oh-my-zsh"

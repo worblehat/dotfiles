@@ -100,4 +100,16 @@
     "workbench.editorAssociations": {
         "*.bin": "hexEditor.hexedit"
     },
+    "go.vetOnSave": "off",
+    "hexeditor.columnWidth": 16,
+    "hexeditor.showDecodedText": true,
+    "hexeditor.defaultEndianness": "little",
+    "hexeditor.inspectorType": "aside",
+    "C_Cpp.default.cStandard": "c99",
+    "C_Cpp.formatting": "clangFormat",
+    "C_Cpp.clang_format_fallbackStyle": "Google",
+    "C_Cpp.codeAnalysis.clangTidy.enabled": true,
+    "[c]": {
+        "editor.formatOnSave": true,
+    },
 }
