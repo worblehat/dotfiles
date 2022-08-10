@@ -107,8 +107,7 @@
     "hexeditor.inspectorType": "aside",
     "C_Cpp.default.cStandard": "c99",
     "C_Cpp.formatting": "clangFormat",
-    "C_Cpp.clang_format_fallbackStyle": "Google",
-    "C_Cpp.codeAnalysis.clangTidy.enabled": true,
+    "C_Cpp.clang_format_fallbackStyle": "none",
     "[c]": {
         "editor.formatOnSave": true,
     },
