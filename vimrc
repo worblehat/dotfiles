@@ -12,10 +12,11 @@ syntax on
 " Remap leader key (used for custom mappings in normal mode)
 let mapleader=","
 
-" Convert tabs to 2 spaces
-set expandtab
-set shiftwidth=2
-set tabstop=2
+" Indentation and Tabs
+set shiftwidth=2  " one indentation level is 2 spaces
+set tabstop=2     " a tab character is worth 2 spaces
+set softtabstop=2 " a tab button press is worth 2 spaces
+set expandtab     " expand tabs to spaces
 set smarttab
 
 " Use filetype specific plugins and indentation rules if available
@@ -161,6 +162,11 @@ endif
 " ======================
 " Plugins Configurations
 " ======================
+
+" === markdown (built-in plugin) ===
+" overwrites shiftwidth by default since
+" https://github.com/tpope/vim-markdown/commit/b78bbce3371a2eb56c89f618cd4ab2baadc9ee61
+let g:markdown_recommended_style = 0
 
 " === showmarks ===
 " Show marks in all buffers
