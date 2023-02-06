@@ -115,4 +115,6 @@
     "go.lintFlags": [
         "--fast"
     ],
+    "files.autoSave": "afterDelay",
+    "window.titleBarStyle": "custom",
 }
