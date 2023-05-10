@@ -117,4 +117,7 @@
     ],
     "files.autoSave": "afterDelay",
     "window.titleBarStyle": "custom",
+    "[python]": {
+        "editor.formatOnType": true
+    },
 }

@@ -149,6 +149,9 @@ if has("gui_running")
   elseif has("gui_win32")
     set guifont=Consolas
     autocmd! bufwritepost _vimrc source %
+    " make "gx" short work in gvim
+    " TODO why does this not work?!
+    let g:netrw_browsex_viewer="setsid gnome-open"
   endif
 endif
 
@@ -169,13 +172,14 @@ endif
 let g:markdown_recommended_style = 0
 
 " === showmarks ===
-" Show marks in all buffers
-autocmd VimEnter * DoShowMarks!
+" Disabled this for now. Not using marks and this makes the buffergator window smaller.
+"autocmd VimEnter * DoShowMarks!
 
 " === buffergator ===
 let g:buffergator_autoupdate = 1
 let g:buffergator_autodismiss_on_select = 0
 let g:buffergator_sort_regime = 'basename'
+let g:buffergator_display_regime = 'basename'
 let g:buffergator_vsplit_size = 25
 
 " === startify ===
