@@ -25,9 +25,9 @@ filetype plugin indent on
 " Toggle displaying of white space characters
 noremap <leader><space> :set list!<CR>
 
-" on "set list", show tabs (as an arrow followed by proper whitespaces) and
-" trailing whitespaces
-set listchars=tab:▸\ ,trail:˽,eol:$
+" Show white spaces by default. Only tabs and trailing spaces but no line breaks.
+set list
+set listchars=tab:▸\ ,trail:·
 
 " Navigation on jklö (for german qwertz keyboard layout!)
 noremap ö l
