@@ -112,8 +112,9 @@ nnoremap <Space> :nohlsearch<CR>
 " Already highlight occurences while typing the search term
 set incsearch
 
-" Command line completion (similar to the behaviour in bash)
+" Command line completion
 set wildmode=longest,list
+set wildignorecase
 
 " OmniCompletion menu behaviour (might already be the default)
 set completeopt=menuone,longest,preview
