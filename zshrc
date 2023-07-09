@@ -83,10 +83,15 @@ ZSH_THEME="robbyrussell"
 plugins=(
   docker
   git
-  #gitfast # Added because default zsh git-completion does not yet support git restore/switch
+  history-substring-search
 )
 
 source $ZSH/oh-my-zsh.sh
+
+# Plugin: history-substring-search
+source $ZSH/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
 
 # User configuration
 
