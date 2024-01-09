@@ -121,4 +121,5 @@
         "editor.formatOnType": true
     },
     "git.openRepositoryInParentFolders": "never",
+    "diffEditor.ignoreTrimWhitespace": false,
 }
