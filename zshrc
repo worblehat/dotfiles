@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH
-GO_VERSION=1.18.3
+GO_VERSION=1.21.6
 export PATH=/home/tmarquardt/go/go$GO_VERSION/sdk/go/bin:/home/tmarquardt/go/go$GO_VERSION/workspace/bin:$PATH
 export GOROOT=/home/tmarquardt/go/go$GO_VERSION/sdk/go
 export GOPATH=/home/tmarquardt/go/go$GO_VERSION/workspace
