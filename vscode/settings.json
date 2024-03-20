@@ -120,4 +120,7 @@
     "git.openRepositoryInParentFolders": "never",
     "diffEditor.ignoreTrimWhitespace": false,
     "window.title": "${rootName}",
+    "shellcheck.customArgs": [
+        "-x"
+    ],
 }
