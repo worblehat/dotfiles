@@ -4,6 +4,7 @@ export PATH=/home/tmarquardt/go/go$GO_VERSION/sdk/go/bin:/home/tmarquardt/go/go$
 export GOROOT=/home/tmarquardt/go/go$GO_VERSION/sdk/go
 export GOPATH=/home/tmarquardt/go/go$GO_VERSION/workspace
 
+export PATH=/home/tmarquardt/.local/bin:$PATH
 #export PATH=$(python3 -m site --user-base)/bin:$PATH
 #export PATH=/home/tmarquardt/node_modules/.bin:$PATH
 
