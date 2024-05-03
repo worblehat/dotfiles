@@ -123,4 +123,5 @@
     "shellcheck.customArgs": [
         "-x"
     ],
+    "nrf-connect.enableTelemetry": false,
 }
