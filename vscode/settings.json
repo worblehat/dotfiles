@@ -105,8 +105,8 @@
     "C_Cpp.default.cStandard": "c99",
     "C_Cpp.formatting": "clangFormat",
     "C_Cpp.clang_format_fallbackStyle": "none",
-    "[c]": {
-        "editor.formatOnSave": true,
+    "[c][cpp]": {
+        "editor.formatOnSave": true
     },
     "go.lintTool": "golangci-lint",
     "go.lintFlags": [
@@ -124,4 +124,11 @@
         "-x"
     ],
     "nrf-connect.enableTelemetry": false,
+    "nrf-connect.topdir": "${nrf-connect.sdk:2.6.1}",
+    "cmake.pinnedCommands": [
+        "workbench.action.tasks.configureTaskRunner",
+        "workbench.action.tasks.runTask"
+    ],
+    "workbench.startupEditor": "none",
+    "terminal.integrated.stickyScroll.enabled": true,
 }
