@@ -105,18 +105,14 @@
     "C_Cpp.default.cStandard": "c99",
     "C_Cpp.formatting": "clangFormat",
     "C_Cpp.clang_format_fallbackStyle": "none",
-    "[c][cpp]": {
+    "[c][cpp][python]": {
         "editor.formatOnSave": true
     },
     "go.lintTool": "golangci-lint",
     "go.lintFlags": [
         "--fast"
     ],
-    "files.autoSave": "afterDelay",
     "window.titleBarStyle": "custom",
-    "[python]": {
-        "editor.formatOnType": true
-    },
     "git.openRepositoryInParentFolders": "never",
     "diffEditor.ignoreTrimWhitespace": false,
     "window.title": "${rootName}",
@@ -131,4 +127,10 @@
     ],
     "workbench.startupEditor": "none",
     "terminal.integrated.stickyScroll.enabled": true,
+    "files.autoSave": "afterDelay",
+    "files.trimFinalNewlines": true,
+    "files.insertFinalNewline": true,
+    "[cpp]": {
+        "editor.suggest.insertMode": "insert"
+    },
 }
